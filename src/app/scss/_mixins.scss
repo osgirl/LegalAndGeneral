@@ -1,0 +1,29 @@
+@mixin background-size($value) {
+  -webkit-background-size: $value;
+  -moz-background-size: $value;
+  -o-background-size: $value;
+  background-size: $value;
+}
+
+@mixin box-shadow($hor, $vert, $blur, $spread, $color) {
+  -webkit-box-shadow: $hor $vert $blur $spread $color;
+  -moz-box-shadow: $hor $vert $blur $spread $color;
+  -o-box-shadow: $hor $vert $blur $spread $color;
+  box-shadow: $hor $vert $blur $spread $color;
+}
+
+// @mixin clearfix {
+//   &:before, &:after {
+//     content: '';
+//     display: block;
+//     clear: both;
+//   }
+// }
+
+@mixin rotate($value) {
+  -webkit-transform: rotate($value);
+  -moz-transform: rotate($value);
+  -ms-transform: rotate($value);
+  -o-transform: rotate($value);
+  transform: rotate($value);
+}

@@ -1,0 +1,412 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+$header-height: 100px;
+$header-mobile-height: 55px;
+
+header {
+  min-height: 100px;
+  border-bottom: 4px solid $blue;
+  .header-links.mobile {
+    display: none;
+    .header-link {
+      display: block;
+      text-align: left;
+      font-size: 16px;
+      padding: 0 20px 10px;
+    }
+  }
+  @media screen and (min-width: $sm-min) {
+    .header-menu-wrapper {
+      float: right;
+    }
+  }
+  @media screen and (max-width: $xs-max) {
+    min-height: 55px;
+    border-width: 2px;
+    &.opened {
+      .header-links.mobile {
+        display: block;
+      }
+    }
+  }
+  
+  .nav-link:not(.header-menu-link) {
+    padding: 0;
+    font-size: 14px;
+  }
+  a,
+  .navbar-nav>li>a,
+  .nav>li>a,
+  .nav-link {
+    position: relative;
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      text-decoration: none;
+    }
+  }
+  .lng-logo {
+    width: 95px;
+    height: 70px;
+    float: left;
+    margin: $spacer 0 0 $spacer;
+    
+    @media screen and (max-width: $xs-max) {
+      width: 56px;
+      height: 42px;
+      margin: 5px 0 5px 10px;
+    }
+  }
+  div[class^="col"] {
+    position: inherit;
+  }
+  .header-links {
+    text-align: right;
+    padding-top: 8px;
+    .header-link {
+      padding-right: 25px;
+      font-size: 13px;
+      color: $gray;
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+  .navbar-collapsable {
+    @media screen and (max-width: $xs-max) {
+      padding: 0;
+    }
+    @media screen and (max-width: $xs-max) {
+      .nav-link,
+      .nav-heading {
+        padding: 10px 20px;
+      }
+      .nav-link:not(.third-level),
+      .nav-heading:not(.third-level),
+      .header-links.mobile {
+        border-top: 1px solid $gray-light;
+      }
+    }
+    .header-menu {
+      padding: 30px 0 0;
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 0;
+      @media screen and (max-width: $xs-max) {
+        padding: 0;
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 55px;
+        border-top: 2px solid $blue;
+      }
+      .header-menu-link:hover,
+      .header-link:hover {
+        color: $blue-light !important;
+      }
+      .clickable-item {
+        .sub-menu-collapsable {
+          transition: all 0.3s ease-out;
+          &.second-level {
+            font-size: 14px;
+          }
+          @media screen and (min-width: $sm-min) {
+            &.first-level {
+              max-height: 0;
+              opacity: 0;
+              overflow: hidden;
+              z-index: -9;
+            }
+          }
+          @media screen and (max-width: $xs-max) {
+            display: none;
+          }
+        }
+        &.active>.sub-menu-collapsable {
+          display: block;
+          max-height: 100%;
+        }
+        @media screen and (min-width: $sm-min) {
+          &.active,
+          &:hover {
+            >.sub-menu-collapsable,
+            .triangle-with-shadow {
+              opacity: 0.9;
+            }
+            .triangle-with-shadow {
+              z-index: 100;
+            }
+            >.sub-menu-collapsable {
+              z-index: 90;
+              display: block;
+              max-height: 100%;
+            }
+          }
+        }
+        @media screen and (max-width: $xs-max) {
+          &>a {
+            &:after {
+              content: '';
+              width: 25px;
+              height: 25px;
+              top: 0;
+              bottom: 0;
+              position: absolute;
+              margin-top: auto;
+              margin-bottom: auto;
+              right: 20px;
+              background: url('./images/plus-black.png') no-repeat;
+              @include background-size(cover);
+            }
+          }
+          &.active {
+            >a {
+              &:after {
+                background: url('./images/minus-black.png') no-repeat;
+                @include background-size(cover);
+              }
+              >.lng-chevron {
+                display: none;
+              }
+            }
+          }
+        }
+        .triangle-with-shadow {
+          position: absolute;
+          width: 39px;
+          height: 18px;
+          margin: auto;
+          top: 0;
+          bottom: -41px;
+          left: 0;
+          right: 0;
+          z-index: 9999;
+          opacity: 0;
+          overflow: hidden;
+          transition: all 0.3s ease-out;
+          @include box-shadow(0,
+          16px,
+          10px,
+          -17px,
+          rgba(0,
+          0,
+          0,
+          0.5));
+          &:after {
+            content: "";
+            position: absolute;
+            width: 27px;
+            height: 27px;
+            background: #fff;
+            transform: rotate(45deg);
+            top: 6px;
+            left: 6px;
+            @include box-shadow(-2px,
+            -2px,
+            10px,
+            -2px,
+            rgba(0,
+            0,
+            0,
+            0.5));
+          }
+        }
+      }
+      .nav-item {
+        list-style-type: none;
+        text-align: left;
+        &:first-of-type {
+          .nav-link {
+            @media screen and (max-width: $xs-max) {
+              border: none;
+            }
+          }
+        }
+        @media screen and (min-width: $sm-min) {
+          width: 28%;
+          text-align: center;
+          &:last-child {
+            width: 16%;
+            text-align: right;
+          }
+        }
+        .header-menu-link {
+          font-size: 20px;
+          font-weight: bold;
+          color: $black;
+          @media screen and (max-width: $sm-max) {
+            font-size: 16px;
+          }
+          @media screen and (max-width: $xs-max) {
+            font-size: 24px;
+            display: block;
+          }
+        }
+        .sub-menu-section {
+          width: 100%;
+          z-index: 99;
+          text-align: inherit;
+          border-radius: 0;
+          border: 0;
+          padding: 0;
+          margin: 0;
+          background-color: $white;
+          @media screen and (min-width: $sm-min) {
+            position: absolute;
+            left: 0;
+            top: 96px;
+            border-top: 4px solid $blue;
+            opacity: 0.9;
+            @include box-shadow(0px,
+            9px,
+            21px,
+            -2px,
+            rgba(0,
+            0,
+            0,
+            0.5));
+          }
+          .nav-link {
+            &:not(.sub-menu-collapsable) {
+              display: block;
+            }
+            &:not(.planning-tools__heading) {
+              color: $black;
+            }
+            &.additional {
+              padding-bottom: 12px;
+              @media screen and (min-width: $sm-min) {
+                &:last-of-type {
+                  padding-bottom: 0 !important;
+                }
+              }
+            }
+            &:hover {
+              color: $yellow;
+            }
+          }
+          .sub-menu-content {
+            &:first-of-type {
+              border-right: 2px solid $gray-light;
+            }
+            @media screen and (max-width: $xs-max) {
+              padding: 0;
+              &:first-of-type {
+                border-width: 0;
+              }
+            }
+          }
+          .sub-menu-wrapper {
+            line-height: 1.1;
+            max-width: 950px;
+            margin: auto;
+            @media screen and (min-width: $sm-min) {
+              padding: 20px 0;
+            }
+            .sub-menu-column {
+              text-align: left;
+              &.second {
+                @media screen and (min-width: $sm-min) {
+                  padding-left: 5px;
+                }
+              }
+              @media screen and (min-width: $sm-min) {
+                .nav-heading,
+                .nav-link {
+                  padding-bottom: $spacer;
+                }
+              }
+              .nav-heading {
+                @media screen and (min-width: $sm-min) {
+                  &:hover {
+                    cursor: default;
+                    color: $gray;
+                  }
+                }
+                font-size: 13px;
+                text-transform: uppercase;
+                color: $gray !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .navbar {
+    position: inherit;
+    padding: 0;
+    border: none;
+    &-toggler {
+      position: absolute;
+      top: 13px;
+      right: 20px;
+      padding: 0;
+      border: none;
+      outline: none;
+      width: 32px;
+      height: 24px;
+      background-color: $white;
+      cursor: pointer;
+      transition: all 0.3s;
+      &.active {
+        span {
+          background: none;
+          &::before,
+          &::after {
+            transition-delay: 0s, 0.3s;
+          }
+          &::before {
+            top: 0;
+            transform: rotate(45deg);
+          }
+          &::after {
+            bottom: 0;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+      span {
+        position: absolute;
+        display: block;
+        width: 32px;
+        top: 10px;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: $black;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background-color: $black;
+          transition-duration: 0.3s, 0.3s;
+          transition-delay: 0.3s, 0s;
+        }
+        &::before {
+          top: -10px;
+          transition-property: top, transform;
+        }
+        &::after {
+          bottom: -10px;
+          transition-property: bottom, transform;
+        }
+      }
+    }
+    &-collapsable {
+      @media screen and (max-width: $xs-max) {
+        display: none;
+        &.active {
+          display: block;
+        }
+      }
+    }
+  }
+}
