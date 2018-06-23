@@ -8,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   private logoImage = require('./images/logo.png');
-  private piggyImage = require('./images/piggy-bank.png');
+  private opened: boolean = false;
+  
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleOpenedCondition() {
+    this.opened = !this.opened;
+  }
 }

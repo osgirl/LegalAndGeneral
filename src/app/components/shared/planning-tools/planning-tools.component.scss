@@ -1,0 +1,71 @@
+@import "../../../scss/variables";
+
+$piggy-width: 50px;
+
+.planning-tools {
+  max-width: 300px;
+  min-height: 140px;
+  padding: $spacer;
+  box-sizing: border-box;
+  border: 4px solid $green;
+  text-align: left;
+
+  &__heading {
+    color: $green;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+  
+  &__content {
+    position: relative;
+    padding-top: 12px;
+    padding-left: $piggy-width + 12px;
+    .nav-link {
+      margin-top: 5px;
+    }
+  }
+  &__image {
+    position: absolute;
+    left: 0;
+    width: $piggy-width;
+  }
+  &__link {
+    color: $black;
+  }
+  &__link:hover {
+    text-decoration: none;
+    color: $yellow;
+  }
+  &.nav-planning-tools {
+    @media screen and (min-width: $sm-min) {
+      .planning-tools__heading {
+        &:hover {
+          cursor: default !important;
+        }
+      }
+    }
+    @media screen and (max-width: $xs-max) {
+      max-width: 100%;
+      min-height: auto;
+      padding: 0;
+      border: 0;
+      .planning-tools__heading {
+        color: $gray;
+      }
+      .planning-tools__content {
+        padding: 0;
+        &:before {
+          content: none;
+        }
+        .nav-link {
+          margin-top: 0;
+        }
+      }
+      p {
+        padding-left: 20px;
+      }
+    }
+  }
+}

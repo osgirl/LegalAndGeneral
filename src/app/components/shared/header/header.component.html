@@ -1,156 +1,20 @@
-<header>
+<header [class.opened]="opened">
     <div class="container">
         <div class="row">
             <img class="lng-logo" [src]="logoImage" alt="logo">
-            <div class="col-sm-8 header-menu-wrapper">
+            <div class="col-sm-8 col-md-9 header-menu-wrapper">
                 <div class="row">
-                    <div class="col-sm-12 hidden-xs">
-                        <section class="header-links">
-                            <a href="#" class="header-link">Helpful resources</a>
-                            <a href="#" class="header-link">Manage your account</a>
-                            <a href="#" class="header-link">Contact us</a>
-                        </section>
+                    <div class="header-links hidden-xs">
+                        <a href="#" class="header-link">Helpful resources</a>
+                        <a href="#" class="header-link">Manage your account</a>
+                        <a href="#" class="header-link">Contact us</a>
                     </div>
 
-                    <button class="visible-xs navbar-toggler">
+                    <button (click)="toggleOpenedCondition()" class="visible-xs navbar-toggler">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-                    <div class="col-sm-10 col-sm-offset-2 navbar-collapsable">
-                        <ul class="navbar-nav header-menu">
-                            <li class="nav-item clickable-item first-level">
-                                <a class="nav-link header-menu-link" href="#">First step
-                                    <span class="hidden-sm hidden-md hidden-lg lng-chevron">»</span>
-                                </a>
-                            </li>
-
-                            <li class="nav-item clickable-item first-level">
-                                <a class="nav-link header-menu-link" href="#">
-                                    On your way
-                                    <span class="hidden-sm hidden-md hidden-lg lng-chevron">»</span>
-                                    <div class="triangle-with-shadow"></div>
-                                </a>
-
-                                <section class="sub-menu-section sub-menu-collapsable first-level">
-                                    <div class="container">
-
-                                        <div class="sub-menu-wrapper">
-                                            <div class="row">
-                                                <div class="col-sm-4 sub-menu-content">
-                                                    <nav class="nav sub-menu-column">
-                                                        <p class="nav-heading hidden-xs">explore your pension:</p>
-                                                        <li>
-                                                            <a class="nav-link" href="#">
-                                                                <b>Managing your pension pot
-                                                                    <span class="visible-xs-inline">»</span>
-                                                                </b>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="nav-link" href="#">
-                                                                <b>Reviewing your choices
-                                                                    <span class="visible-xs-inline">»</span>
-                                                                </b>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="nav-link" href="#">
-                                                                <b>Getting you pensions into one place
-                                                                    <span class="visible-xs-inline">»</span>
-                                                                </b>
-                                                            </a>
-                                                        </li>
-
-                                                        <li class="clickable-item second-level">
-                                                            <a class="nav-link" href="#">
-                                                                <b>Investing your pension pot</b>
-                                                                <span class="hidden-sm hidden-md hidden-lg lng-chevron">
-                                                                    <b>»</b>
-                                                                </span>
-                                                            </a>
-                                                            <div class="sub-menu-collapsable second-level">
-                                                                <a class="nav-link third-level additional" href="#">Balancing risk and reward
-                                                                    <span class="visible-xs-inline">»</span>
-                                                                </a>
-                                                                <a class="nav-link third-level additional" href="#">Making your own investment choices
-                                                                    <span class="visible-xs-inline">»</span>
-                                                                </a>
-                                                                <a class="nav-link third-level additional" href="#">Your investment options
-                                                                    <span class="visible-xs-inline">»</span>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                    </nav>
-                                                </div>
-                                                <div class="col-sm-4 sub-menu-content">
-                                                    <nav class="nav sub-menu-column second">
-                                                        <li class="clickable-item second-level">
-                                                            <a class="nav-link nav-heading">useful information
-                                                                <span class="hidden-xs">:</span>
-                                                            </a>
-
-                                                            <div class="sub-menu-collapsable second-level">
-                                                                <a class="nav-link third-level" href="#">How I can manage my pension savings
-                                                                    <span class="visible-xs-inline">»</span>
-                                                                </a>
-                                                                <a class="nav-link third-level" href="#">What I need to think about now
-                                                                    <span class="visible-xs-inline">»</span>
-                                                                </a>
-                                                                <a class="nav-link third-level" href="#">How to get my pensions in one place
-                                                                    <span class="visible-xs-inline">»</span>
-                                                                </a>
-                                                                <a class="nav-link third-level" href="#">Are my investments right for me
-                                                                    <span class="visible-xs-inline">»</span>
-                                                                </a>
-                                                            </div>
-                                                        </li>
-                                                    </nav>
-                                                </div>
-                                                <div class="col-sm-4 sub-menu-content">
-                                                    <div class="planning-tools nav-planning-tools">
-                                                        <li class="clickable-item second-level">
-                                                            <a class="nav-link text-uppercase planning-tools__heading">planning tools</a>
-
-                                                            <div class="sub-menu-collapsable second-level planning-tools__content">
-                                                                <p>
-                                                                    <b>How much will you need?</b>
-                                                                    <br/>
-                                                                </p>
-                                                                <a class="planning-tools__link nav-link text-justify third-level" href="#">Use our online tool to help
-                                                                    <br/> you plan for your future »</a>
-                                                            </div>
-                                                        </li>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </li>
-
-                            <li class="nav-item clickable-item first-level">
-                                <a class="nav-link header-menu-link" href="#">Getting there
-                                    <span class="hidden-sm hidden-md hidden-lg lng-chevron">»</span>
-                                </a>
-                            </li>
-                            <li class="nav-item clickable-item first-level">
-                                <a class="nav-link header-menu-link" href="#">Arriving
-                                    <span class="hidden-sm hidden-md hidden-lg lng-chevron">»</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <section class="header-links mobile">
-                            <a href="#" class="header-link">Helpful resources
-                                <span class="visible-xs-inline">»</span>
-                            </a>
-                            <a href="#" class="header-link">Manage your account
-                                <span class="visible-xs-inline">»</span>
-                            </a>
-                            <a href="#" class="header-link">Contact us
-                                <span class="visible-xs-inline">»</span>
-                            </a>
-                        </section>
-                    </div>
+                    <app-navbar [active]="opened"></app-navbar>
                 </div>
             </div>
         </div>

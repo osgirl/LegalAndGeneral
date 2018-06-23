@@ -1,1 +1,75 @@
 @import "scss/bootstrap";
+@import "scss/variables";
+// @import "scss/navbars";s
+
+/*************************   HELPERS   *************************/
+
+.m-1 {
+    margin: $spacer;
+  }
+  .mt-1 {
+    margin-top: $spacer;
+  }
+  .mb-1 {
+    margin-bottom: $spacer;
+  }
+  .ml-1 {
+    margin-left: $spacer;
+  }
+  .mr-1 {
+    margin-right: $spacer;
+  }
+  .mv-1 {
+    margin-top: $spacer;
+    margin-bottom: $spacer;
+  }
+  .mh-1 {
+    margin-left: $spacer;
+    margin-right: $spacer;
+  }
+  
+  .d-iblock {
+    display: inline-block;
+  }
+  
+  @media (min-width: $md-min) {
+    .col-md-pull-right {
+      float: right !important;
+    }
+  }
+  
+  .tab-clicker {
+    display: block;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  
+  ul,
+  ol {
+    padding-left: 17px;
+  }
+  
+  .blue-dots-list {
+    li {
+      color: $blue;
+      span {
+        color: $black;
+      }
+    }
+  }
+  
+  .bold-numbers-list {
+    li {
+      font-weight: bold;
+      span {
+        font-weight: normal;
+      }
+    }
+  }
+  
+  .lng-heading {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+  }
