@@ -1,0 +1,315 @@
+@import "variables";
+@import "mixins";
+$header-mobile-height: 55px;
+
+.navbar-collapsable {
+  @media screen and (max-width: $xs-max) {
+    background-color: $white;
+    padding: 0;
+    display: none;
+    margin-top: $header-mobile-height - 2px;
+    border-top: 2px solid $blue;
+    &.active {
+      display: block;
+      .additional-block {
+        display: block;
+      }
+    }
+    
+    .additional-block {
+      margin-top: 0;
+      border-top: 1px solid $gray_alt;
+    }
+  }
+
+  .additional-block {
+    display: none;
+    &__link {
+      display: block;
+      text-align: left;
+      font-size: 16px;
+      padding: 0 20px 10px;
+      color: $gray;
+      &:hover {
+        color: $blue;
+      }
+      &:first-of-type {
+        padding-top: 10px;
+      }
+    }
+  }
+
+  .header-menu {
+    margin-top: 30px;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 0;
+    @media screen and (min-width: $sm-min) {
+      display: flex;
+      justify-content: space-between;
+    }
+    @media screen and (min-width: $md-min) {
+      margin-top: 27px;
+    }
+    @media screen and (max-width: $xs-max) {
+      margin: 0;
+    }
+    
+  }
+}
+
+a,
+.navbar-nav>li>a,
+.nav>li>a,
+.nav-link {
+  position: relative;
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: $xs-max) {
+  .nav-link,
+  .nav-heading {
+    padding: 10px 20px;
+    line-height: 20px;
+  }
+  .nav-link:not(.third-level),
+  .nav-heading:not(.third-level) {
+    margin-top: 0;
+    border-top: 1px solid $gray_alt;
+  }
+}
+
+.nav-link {
+  cursor: pointer;
+  @media screen and (min-width: $sm-min) {
+    &:not(.header-menu__link) {
+      padding: 0;
+      font-size: 14px;
+    }
+  }
+}
+
+.header-menu__link {
+  font-size: 20px;
+  font-weight: bold;
+  &, &:focus {
+    color: $black;
+  }
+  @media screen and (max-width: $sm-max) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: $xs-max) {
+    font-size: 24px;
+    display: block;
+  }
+}
+
+.header-menu__link:hover,
+.header-link:hover {
+  color: $blue;
+}
+
+.clickable-item {
+  &.first-level.active .sub-menu-collapsable.first-level {
+    display: block;
+    max-height: 100%;
+  }
+  &.second-level.active .sub-menu-collapsable.second-level {
+    display: block;
+    max-height: 100%;
+  }
+  .sub-menu-collapsable {
+    transition: all 0.3s ease-out;
+    &.second-level {
+      font-size: 14px;
+    }
+    @media screen and (min-width: $sm-min) {
+      &.first-level {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        z-index: -9;
+      }
+    }
+    @media screen and (max-width: $xs-max) {
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: $sm-min) {
+    &:hover {
+      .sub-menu-collapsable,
+      .submenu-triangle {
+        opacity: 0.9;
+      }
+      .submenu-triangle {
+        z-index: 100;
+      }
+      .sub-menu-collapsable {
+        z-index: 90;
+        display: block;
+        max-height: 100%;
+      }
+    }
+  }
+
+  @media screen and (max-width: $xs-max) {
+    &>.opener {
+      &:after {
+        content: '';
+        width: 25px;
+        height: 25px;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        margin-top: auto;
+        margin-bottom: auto;
+        right: 20px;
+        // background: url('assets/images/plus-black.png') no-repeat;
+        @include background-size(cover);
+      }
+    }    
+    &.active {
+      >.opener {
+        &:after {
+          // background: url('assets/images/minus-black.png') no-repeat;
+          @include background-size(cover);
+        }
+        >.lng-chevron {
+          display: none;
+        }
+      }
+    }
+  }
+  .submenu-triangle {
+    position: absolute;
+    width: 39px;
+    height: 18px;
+    margin: auto;
+    top: 0;
+    bottom: -34px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    @include box-shadow(0,
+    16px,
+    10px,
+    -17px,
+    rgba(0,
+    0,
+    0,
+    0.5));
+    &:after {
+      content: "";
+      position: absolute;
+      width: 27px;
+      height: 27px;
+      background: $white;
+      transform: rotate(45deg);
+      top: 6px;
+      left: 6px;
+      @include box-shadow(-2px,
+      -2px,
+      10px,
+      -2px,
+      rgba(0,
+      0,
+      0,
+      0.5));
+    }
+  }
+}
+
+.nav-item {
+  list-style-type: none;
+  text-align: left;
+  .sub-menu {
+    width: 100%;
+    z-index: 99;
+    text-align: inherit;
+    border-radius: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: $white;
+    @media screen and (min-width: $sm-min) {
+      position: absolute;
+      left: 0;
+      top: 96px;
+      border-top: 4px solid $blue;
+      opacity: 0.9;
+      @include box-shadow(0px,
+      9px,
+      21px,
+      -2px,
+      rgba(0,
+      0,
+      0,
+      0.5));
+    }
+    .nav-link {
+      &:not(.sub-menu-collapsable) {
+        display: block;
+      }
+      &:not(.info-block__heading) {
+        color: $black;
+      }
+      &:hover {
+        color: $yellow;
+      }
+    }
+    &__content {
+      @media screen and (min-width: $sm-min) {
+        display: flex;
+        justify-content: center;
+        &:nth-child(2) {
+          border-right: 2px solid $gray_alt;
+          border-left: 2px solid $gray_alt;
+        }
+      }
+      @media screen and (max-width: $xs-max) {
+        padding: 0;
+        &:first-of-type {
+          border-width: 0;
+        }
+      }
+    }
+    &__inner-wrapper {
+      line-height: 1.1;
+      max-width: 950px;
+      margin: auto;
+      @media screen and (min-width: $sm-min) {
+        padding: 20px 0;
+      }
+      .sub-menu__column {
+        text-align: left;
+        padding: 0;
+        list-style-type: none;
+        @media screen and (min-width: $sm-min) {
+          .nav-heading, .nav-link {
+            padding-bottom: $spacer;
+          }
+        }
+        .nav-heading {
+          @media screen and (min-width: $sm-min) {
+            &:hover {
+              cursor: default;
+              color: $gray;
+            }
+          }
+          font-size: 13px;
+          text-transform: uppercase;
+          color: $gray !important;
+        }
+      }
+    }
+  }
+}

@@ -1,75 +1,76 @@
 @import "app/app.component";
 
 body {
-    font-size: 16px;
-    color: $black;
-  }
-  
-  body,
-  p,
-  span,
-  a,
-  h1,
-  h2,
-  h3,
-  h4,
-  input,
-  button {
-    font-family: 'Arial';
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4 {
-    margin: 0;
-  }
-  
-  h4 {
-    margin-bottom: 5px;
-  }
-  
+  font-size: 16px;
+  color: $black;
+  margin: 0;
+}
+
+body,
+p,
+span,
+a,
+h1,
+h2,
+h3,
+h4,
+input,
+button {
+  font-family: 'Arial';
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+h4 {
+  margin-bottom: 5px;
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 55px;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+@media screen and (max-width: $sm-max) {
   h1 {
-    font-size: 64px;
-    line-height: 1;
+    font-size: 50px;
   }
-  
   h2 {
-    font-size: 55px;
+    font-size: 45px;
   }
-  
+}
+
+@media screen and (max-width: $xs-max) {
+  h1 {
+    font-size: 35px;
+  }
+  h2 {
+    font-size: 35px;
+  }
   h3 {
-    font-size: 40px;
+    font-size: 30px;
   }
-  
-  h4 {
-    font-size: 20px;
-  }
-  
-  @media screen and (max-width: $sm-max) {
-    h1 {
-      font-size: 50px;
-    }
-    h2 {
-      font-size: 45px;
-    }
-  }
-  
-  @media screen and (max-width: $xs-max) {
-    h1 {
-      font-size: 35px;
-    }
-    h2 {
-      font-size: 35px;
-    }
-    h3 {
-      font-size: 30px;
-    }
-  }
-  
-  a,
-  button {
-    transition-property: background-color, color;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-out;
-  }
+}
+
+a,
+button {
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}

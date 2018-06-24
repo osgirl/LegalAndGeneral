@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { PlanningToolsComponent } from './components/shared/planning-tools/planning-tools.component';
-import { NavbarComponent } from './components/shared/header/navbar/navbar.component';
+import { SubmenuComponent } from './components/shared/header/submenu/submenu.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { NavbarComponent } from './components/shared/header/navbar/navbar.compon
     HeaderComponent,
     FooterComponent,
     PlanningToolsComponent,
-    NavbarComponent,
+    SubmenuComponent
   ],
   imports: [
     BrowserModule

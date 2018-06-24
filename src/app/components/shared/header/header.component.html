@@ -1,23 +1,62 @@
-<header [class.opened]="opened">
-    <div class="container">
-        <div class="row">
-            <img class="lng-logo" [src]="logoImage" alt="logo">
-            <div class="col-sm-8 col-md-9 header-menu-wrapper">
-                <div class="row">
-                    <div class="header-links hidden-xs">
-                        <a href="#" class="header-link">Helpful resources</a>
-                        <a href="#" class="header-link">Manage your account</a>
-                        <a href="#" class="header-link">Contact us</a>
+<header [class.opened]="isOpened">
+        <div class="container">
+            <div class="row">
+                <img class="lng-logo" [src]="logoImage" alt="logo">
+    
+                <div class="col-sm-8 col-md-9 header-menu-wrapper">
+                    <div class="row">
+                        <div class="header-links hidden-xs">
+                            <a href="#" class="header-link">Helpful resources</a>
+                            <a href="#" class="header-link">Manage your account</a>
+                            <a href="#" class="header-link">Contact us</a>
+                        </div>
+    
+                        <button (click)="toggleOpenedCondition()"
+                                [class.active]="isOpened"
+                                class="visible-xs hamburger-menu">
+                            <span class="hamburger-menu__icon"></span>
+                        </button>
+    
+                        <div class="navbar-collapsable" [class.active]="isOpened">
+                            <ul class="navbar-nav header-menu">
+    
+                                <li *ngFor="let firstLevelItem of firstLevelItems"
+                                    class="nav-item clickable-item first-level"
+                                    [class.active]="firstLevelItem === selectedItem">
+                          
+                                    <a class="nav-link header-menu__link" href="#"
+                                        (click)="onSelect(firstLevelItem)">
+                                        {{firstLevelItem.text}}
+                                        <span class="hidden-sm hidden-md hidden-lg lng-chevron">»</span>
+                                
+                                        <div *ngIf="firstLevelItem.secondLevelItems" class="submenu-triangle"></div>
+                                    </a>
+                                
+                                    <app-submenu
+                                        *ngIf="firstLevelItem.secondLevelItems"
+                                        [secondLevelItems]="firstLevelItem.secondLevelItems"
+                                    ></app-submenu>    
+                                </li>
+                            </ul>
+                            
+                            <section class="additional-block">
+                                <a href="#" class="additional-block__link">
+                                    Helpful resources
+                                    <span class="visible-xs-inline">»</span>
+                                </a>
+                                <a href="#" class="additional-block__link">
+                                    Manage your account
+                                    <span class="visible-xs-inline">»</span>
+                                </a>
+                                <a href="#" class="additional-block__link">
+                                    Contact us
+                                    <span class="visible-xs-inline">»</span>
+                                </a>
+                            </section>
+                          </div>
                     </div>
-
-                    <button (click)="toggleOpenedCondition()" class="visible-xs navbar-toggler">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <app-navbar [active]="opened"></app-navbar>
                 </div>
             </div>
         </div>
-    </div>
-
-</header>
+    
+    </header>

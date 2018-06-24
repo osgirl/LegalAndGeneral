@@ -1,0 +1,35 @@
+<div class="sub-menu sub-menu-collapsable first-level">
+    <div class="container">
+        <div class="sub-menu__inner-wrapper">
+            <div class="row">
+                
+                <div *ngFor="let item of secondLevelItems" class="col-sm-4 sub-menu__content">
+                    <ul class="nav sub-menu__column">
+                        <li *ngFor="let column of item.column"
+                            [ngClass]="{'clickable-item second-level' : column.thirdLevelItems}"
+                            [class.active]="isSecondLevelActive"
+                            (click)="toggleStateActive()">
+
+                            <a class="nav-link" href="#">
+                                <b>{{column.text}}
+                                    <span class="visible-xs-inline">»</span>
+                                </b>
+                            </a>
+                            <div *ngIf="column.thirdLevelItems"
+                                class="sub-menu-collapsable second-level">
+
+                                <a *ngFor="let thirdLevelItem of column.thirdLevelItems"
+                                    class="nav-link third-level" href="#">
+
+                                    {{thirdLevelItem.text}}
+                                    <span class="visible-xs-inline">»</span>
+                                </a>
+                                
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

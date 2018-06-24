@@ -1,14 +1,11 @@
 @import "../../../scss/variables";
 @import "../../../scss/mixins";
-
 $header-height: 100px;
 $header-mobile-height: 55px;
-
 header {
   height: $header-height;
   border-bottom: 4px solid $blue;
   background-color: $white;
-  
   @media screen and (min-width: $sm-min) {
     .header-menu-wrapper {
       float: right;
@@ -17,22 +14,18 @@ header {
   @media screen and (max-width: $xs-max) {
     height: $header-mobile-height;
     border-width: 2px;
-
     &.opened {
       height: auto;
     }
   }
-  
   .lng-logo {
     width: 95px;
     height: 70px;
-    margin: $spacer 0;
+    margin-top: $spacer;
     background-color: $white;
-
     &_second {
       background-color: $white;
     }
-    
     @media screen and (max-width: $xs-max) {
       position: absolute;
       top: 0;
@@ -43,87 +36,80 @@ header {
   }
   div[class^="col"] {
     position: inherit;
-  }    
-
+  }
   .header-link {
-    padding-right: $spacer;
+    margin-right: $spacer;
     font-size: 13px;
     color: $gray;
     &:last-child {
-      padding-right: 0;
+      margin-right: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $yellow;
     }
   }
-
   .header-links {
     margin-top: $spacer;
     display: flex;
     justify-content: flex-end;
   }
-
-  .navbar {
-    position: inherit;
+  .hamburger-menu {
+    position: absolute;
+    top: 13px;
+    right: 20px;
     padding: 0;
     border: none;
-
-    &-toggler {
-      position: absolute;
-      top: 13px;
-      right: 20px;
-      padding: 0;
-      border: none;
-      outline: none;
-      width: 32px;
-      height: 24px;
-      background-color: transparent;
-      cursor: pointer;
-      transition: all 0.3s;
-
-      &.active {
-        span {
-          background: none;
-          &::before,
-          &::after {
-            transition-delay: 0s, 0.3s;
-          }
-          &::before {
-            top: 0;
-            transform: rotate(45deg);
-          }
-          &::after {
-            bottom: 0;
-            transform: rotate(-45deg);
-          }
-        }
-      }
-      span {
-        position: absolute;
-        display: block;
-        width: 32px;
-        top: 10px;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: $black;
+    outline: none;
+    width: 32px;
+    height: 24px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    &.active {
+      .hamburger-menu__icon {
+        background: none;
         &::before,
         &::after {
-          content: "";
-          position: absolute;
-          display: block;
-          left: 0;
-          width: 100%;
-          height: 4px;
-          background-color: $black;
-          transition-duration: 0.3s, 0.3s;
-          transition-delay: 0.3s, 0s;
+          transition-delay: 0s, 0.3s;
         }
         &::before {
-          top: -10px;
-          transition-property: top, transform;
+          top: 0;
+          transform: rotate(45deg);
         }
         &::after {
-          bottom: -10px;
-          transition-property: bottom, transform;
+          bottom: 0;
+          transform: rotate(-45deg);
         }
+      }
+    }
+    &__icon {
+      position: absolute;
+      display: block;
+      width: 32px;
+      top: 10px;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: $black;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: $black;
+        transition-duration: 0.3s, 0.3s;
+      }
+      &::before {
+        top: -10px;
+        transition-property: top, transform;
+      }
+      &::after {
+        bottom: -10px;
+        transition-property: bottom, transform;
       }
     }
   }

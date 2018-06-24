@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./planning-tools.component.scss']
 })
 export class PlanningToolsComponent implements OnInit {
-  private piggyImage = require('./images/piggy-bank.png');
+  piggyImage = require('./images/piggy-bank.png');
   
   constructor() { }
 
