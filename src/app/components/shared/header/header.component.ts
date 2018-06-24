@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggleOpenedCondition() {
+  toggleCondition() {
     this.isOpened = !this.isOpened;
   }
 

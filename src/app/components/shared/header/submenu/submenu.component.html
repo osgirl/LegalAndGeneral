@@ -5,26 +5,26 @@
                 
                 <div *ngFor="let item of secondLevelItems" class="col-sm-4 sub-menu__content">
                     <ul class="nav sub-menu__column">
-                        <li *ngFor="let column of item.column"
-                            [ngClass]="{'clickable-item second-level' : column.thirdLevelItems}"
-                            [class.active]="isSecondLevelActive"
-                            (click)="toggleStateActive()">
+                        <li *ngFor="let secondLevelItem of item.column"
+                            [ngClass]="{'clickable-item second-level' : secondLevelItem.thirdLevelItems, 'nav-heading hidden-xs' : secondLevelItem.isNavHeading}"
+                            [class.active]="selectedItem == secondLevelItem"
+                            (click)="onSelect(secondLevelItem)">
 
-                            <a class="nav-link" href="#">
-                                <b>{{column.text}}
+                            <span *ngIf="secondLevelItem.isNavHeading">{{secondLevelItem.text}}:</span>
+
+                            <a *ngIf="!secondLevelItem.isNavHeading" class="nav-link" href="#">
+                                <b>{{secondLevelItem.text}}
                                     <span class="visible-xs-inline">»</span>
                                 </b>
                             </a>
-                            <div *ngIf="column.thirdLevelItems"
+                            <div *ngIf="secondLevelItem.thirdLevelItems"
                                 class="sub-menu-collapsable second-level">
 
-                                <a *ngFor="let thirdLevelItem of column.thirdLevelItems"
+                                <a *ngFor="let thirdLevelItem of secondLevelItem.thirdLevelItems"
                                     class="nav-link third-level" href="#">
-
                                     {{thirdLevelItem.text}}
                                     <span class="visible-xs-inline">»</span>
                                 </a>
-                                
                             </div>
                         </li>
                     </ul>

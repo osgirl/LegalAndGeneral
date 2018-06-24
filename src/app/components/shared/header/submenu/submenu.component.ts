@@ -7,16 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SubmenuComponent implements OnInit {
   @Input() secondLevelItems;
   @Input() text: string;
-  isSecondLevelActive: boolean = false;
+  selectedItem: any;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  toggleStateActive() {
-    this.isSecondLevelActive = !this.isSecondLevelActive;
+  onSelect(item: any) {
+    if (item == this.selectedItem)
+      this.selectedItem = null;
+    else 
+      this.selectedItem = item;
   }
-  
 
 }

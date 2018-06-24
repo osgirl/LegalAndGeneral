@@ -31,7 +31,7 @@ export const FirstLevelItems: FirstLevelItem[] = [
         {
           column: [
             {
-              text: 'FAQ', isNavHeading: true,
+              text: 'FAQ',
 
               thirdLevelItems: [
                 { text: 'How I can manage my pension savings' },

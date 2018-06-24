@@ -82,6 +82,11 @@ a,
     margin-top: 0;
     border-top: 1px solid $gray_alt;
   }
+  .nav-item:first-of-type {
+      .nav-link {
+        border: none;
+      }
+    }
 }
 
 .nav-link {
