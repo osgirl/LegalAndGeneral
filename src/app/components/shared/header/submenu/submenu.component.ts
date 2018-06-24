@@ -17,8 +17,11 @@ export class SubmenuComponent implements OnInit {
   onSelect(item: any) {
     if (item == this.selectedItem)
       this.selectedItem = null;
-    else 
+    else
       this.selectedItem = item;
+
+    if (window.innerWidth < 767)
+      return false;
   }
 
 }

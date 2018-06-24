@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   isFirstLevelActive: boolean = false;
 
   firstLevelItems = FirstLevelItems;
-  
+
   constructor() { }
 
   ngOnInit() {
@@ -28,7 +28,10 @@ export class HeaderComponent implements OnInit {
   onSelect(item: FirstLevelItem) {
     if (item == this.selectedItem)
       this.selectedItem = null;
-    else 
+    else
       this.selectedItem = item;
+
+    if (window.innerWidth < 767)
+      return false;
   }
 }
