@@ -1,0 +1,47 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+$social-button-size: 36px;
+
+.social-buttons {
+  margin-top: $spacer;
+  @media screen and (max-width: $xs-max) {
+    text-align: center;
+  }
+  .social-button {
+    display: inline-block;
+    width: $social-button-size;
+    height: $social-button-size;
+    opacity: 1;
+    margin-right: 3px;
+    &:last-of-type {
+        margin-right: 0;
+    }
+    &:hover {
+      opacity: 0.6;
+    }
+    &.facebook {
+      background: url('images/facebook.png') no-repeat;
+      @include background-size(cover);
+    }
+    &.google {
+      background: url('images/google.png') no-repeat;
+      @include background-size(cover);
+    }
+    &.linkedin {
+      background: url('images/linkedin.png') no-repeat;
+      @include background-size(cover);
+    }
+    &.twitter {
+      background: url('images/twitter.png') no-repeat;
+      @include background-size(cover);
+    }
+    &.youtube {
+      background: url('images/youtube.png') no-repeat;
+      @include background-size(cover);
+    }
+    &.instagram {
+      background: url('images/instagram.png') no-repeat;
+      @include background-size(cover);
+    }
+  }
+}

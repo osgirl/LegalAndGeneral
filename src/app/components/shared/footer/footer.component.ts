@@ -1,3 +1,4 @@
+declare var require: any;
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
+  logoImagePath = require('./images/logo_mini.png');
   constructor() { }
 
   ngOnInit() {

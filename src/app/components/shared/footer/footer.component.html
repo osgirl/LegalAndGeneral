@@ -1,6 +1,51 @@
-<p class="text">
-  footer works!
-</p>
-<div class="element">
-  
-</div>
+<footer>
+    <div class="footer-top back-to-top">
+    </div>
+    <div class="footer-head">
+        <img [src]="logoImagePath" alt="logo" class="footer-logo">
+    </div>
+    <div class="container footer-center">
+        <div class="row">
+            <p class="col-sm-3 hidden-xs footer-heading">Quick links</p>
+            <p class="col-sm-3 col-sm-offset-6 footer-heading">Connect with us:</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 hidden-xs">
+                <p class="footer-title">General</p>
+                <a class="footer-link" href="#">Accessibility</a>
+                <a class="footer-link" href="#">Security</a>
+                <a class="footer-link" href="#">Legal and regulatory info</a>
+                <a class="footer-link" href="#">All our websites</a>
+                
+                
+            </div>
+            <div class="col-sm-3 hidden-xs">
+                <p class="footer-title">Social</p>
+                <a class="footer-link" href="#">Privacy policy</a>
+                <a class="footer-link" href="#">Cookie policy</a>
+                <a class="footer-link" href="#">Sitemap</a>
+                <a class="footer-link" href="#">Contact us</a>
+            </div>
+            <div class="col-sm-3 hidden-xs">
+                <p class="footer-title">Planing Tools</p>
+                <a class="footer-link" href="#">Helpful resources</a>
+                <a class="footer-link" href="#">Manage account</a>
+                <a class="footer-link" href="#">Site map</a>
+                <a class="footer-link" href="#">Contact us</a>
+            </div>
+            <app-social-buttons></app-social-buttons>
+            
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <span class="footer-bottom-text">© Legal & General Group plc 2017.</span>
+        <a class="footer-link" href="#">Accessibility</a>
+        <a class="footer-link" href="#">Security</a>
+        <a class="footer-link" href="#">Legal and regulatory</a>
+        <a class="footer-link" href="#">Privacy policy</a>
+        <a class="footer-link" href="#">Cookie policy</a>
+        <a class="footer-link" href="#">Contact us</a>
+    </div>
+    
+</footer>

@@ -21,8 +21,8 @@
                             <ul class="navbar-nav header-menu">
     
                                 <li *ngFor="let firstLevelItem of firstLevelItems"
-                                    class="nav-item clickable-item first-level"
-                                    [class.active]="firstLevelItem === selectedItem">
+                                    [ngClass]="{'clickable-item first-level' : firstLevelItem.secondLevelItems, 'active' : firstLevelItem === selectedItem}"
+                                    class="nav-item">
                           
                                     <a class="nav-link header-menu__link" href="#"
                                         (click)="onSelect(firstLevelItem)">
