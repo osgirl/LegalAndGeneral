@@ -1,7 +1,6 @@
 export class FirstLevelItem {
-    text: "string";
-    isOpened: boolean;
-    secondLevelItems: Array<
+    text: string;
+    secondLevelItems?: Array<
         {
             column: Array<
             {
@@ -10,6 +9,6 @@ export class FirstLevelItem {
                 thirdLevelItems?: Array<{
                     text: string;
                 }>
-            }>
-        }>
+            }>;
+        }>;
 }
