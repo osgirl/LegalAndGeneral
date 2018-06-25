@@ -1,116 +1,166 @@
 @import "../../../scss/variables";
 @import "../../../scss/mixins";
 $header-height: 100px;
-$header-mobile-height: 55px;
+$header-mobile-height: 58px;
+$header-color: $white;
+$border-color: $gray_alt;
+
 header {
-  height: $header-height;
-  border-bottom: 4px solid $blue;
-  background-color: $white;
-  @media screen and (min-width: $sm-min) {
-    .header-menu-wrapper {
-      float: right;
-    }
-  }
-  @media screen and (max-width: $xs-max) {
-    height: $header-mobile-height;
-    border-width: 2px;
-    &.opened {
-      height: auto;
-    }
-  }
-  .lng-logo {
-    width: 95px;
-    height: 70px;
-    margin-top: $spacer;
-    background-color: $white;
-    &_second {
-      background-color: $white;
+    @include clearfix();
+    height: $header-height;
+    border-bottom: 4px solid $blue;
+    background-color: $header-color;
+    @media screen and (min-width: $sm-min) {
+        .header-menu-wrapper {
+            float: right;
+        }
     }
     @media screen and (max-width: $xs-max) {
-      position: absolute;
-      top: 0;
-      width: 56px;
-      height: 42px;
-      margin: 5px 0 5px 20px;
-    }
-  }
-  div[class^="col"] {
-    position: inherit;
-  }
-  .header-link {
-    margin-right: $spacer;
-    font-size: 13px;
-    color: $gray;
-    &:last-child {
-      margin-right: 0;
-    }
-    &:hover {
-      text-decoration: none;
-      color: $yellow;
-    }
-  }
-  .header-links {
-    margin-top: $spacer;
-    display: flex;
-    justify-content: flex-end;
-  }
-  .hamburger-menu {
-    position: absolute;
-    top: 13px;
-    right: 20px;
-    padding: 0;
-    border: none;
-    outline: none;
-    width: 32px;
-    height: 24px;
-    background-color: transparent;
-    cursor: pointer;
-    transition: all 0.3s;
-    &.active {
-      .hamburger-menu__icon {
-        background: none;
-        &::before,
-        &::after {
-          transition-delay: 0s, 0.3s;
+        height: $header-mobile-height;
+        border-width: 2px;
+        &.opened {
+            height: auto;
         }
-        &::before {
-          top: 0;
-          transform: rotate(45deg);
-        }
-        &::after {
-          bottom: 0;
-          transform: rotate(-45deg);
-        }
-      }
     }
-    &__icon {
-      position: absolute;
-      display: block;
-      width: 32px;
-      top: 10px;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: $black;
-      &::before,
-      &::after {
-        content: "";
+    .lng-logo {
+        width: 95px;
+        height: 70px;
+        margin-top: $spacer;
+        @media screen and (max-width: $xs-max) {
+            width: 56px;
+            height: 42px;
+            margin: 7px 20px;
+        }
+    }
+    div[class^="col"] {
+        position: inherit;
+    }
+    .header-link {
+        margin-right: $spacer;
+        font-size: 13px;
+        color: $gray;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            text-decoration: none;
+            color: $yellow;
+        }
+    }
+    .header-links {
+        margin-top: $spacer;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .hamburger-menu {
         position: absolute;
-        display: block;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background-color: $black;
-        transition-duration: 0.3s, 0.3s;
-      }
-      &::before {
-        top: -10px;
-        transition-property: top, transform;
-      }
-      &::after {
-        bottom: -10px;
-        transition-property: bottom, transform;
-      }
+        top: 13px;
+        right: 20px;
+        padding: 0;
+        border: none;
+        outline: none;
+        width: 32px;
+        height: 24px;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 0.3s;
+        &.active {
+            .hamburger-menu__icon {
+                background: none;
+                &::before,
+                &::after {
+                    transition-delay: 0s, 0.3s;
+                }
+                &::before {
+                    top: 0;
+                    transform: rotate(45deg);
+                }
+                &::after {
+                    bottom: 0;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        &__icon {
+            position: absolute;
+            display: block;
+            width: 32px;
+            top: 10px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: $black;
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                display: block;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background-color: $black;
+                transition-duration: 0.3s, 0.3s;
+            }
+            &::before {
+                top: -10px;
+                transition-property: top, transform;
+            }
+            &::after {
+                bottom: -10px;
+                transition-property: bottom, transform;
+            }
+        }
     }
-  }
+}
+
+.navbar-collapsable {
+    @media screen and (max-width: $xs-max) {
+        background-color: $header-color;
+        padding: 0;
+        display: none;
+        &.active {
+            display: block;
+            .additional-block {
+                display: block;
+            }
+        }
+        .additional-block {
+            margin-top: 0;
+            border-top: 1px solid $border-color;
+        }
+    }
+    .additional-block {
+        display: none;
+        &__link {
+            display: block;
+            text-align: left;
+            font-size: 16px;
+            padding: 0 20px 10px;
+            color: $gray;
+            &:hover {
+                color: $blue;
+            }
+            &:first-of-type {
+                padding-top: 10px;
+            }
+        }
+    }
+    .header-menu {
+        margin-top: 30px;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0;
+        padding: 0;
+        @media screen and (min-width: $sm-min) {
+            display: flex;
+            justify-content: space-between;
+        }
+        @media screen and (min-width: $md-min) {
+            margin-top: 27px;
+        }
+        @media screen and (max-width: $xs-max) {
+            margin: 0;
+            border-top: 2px solid $blue;
+        }
+    }
 }

@@ -1,0 +1,150 @@
+@import "../../../scss/variables";
+
+$header-mobile-height: 55px;
+$triangle-separator-sm-width: 60px;
+$triangle-separator-sm-height: 30px;
+$triangle-separator-xs-width: 16px;
+$triangle-separator-xs-height: 7px;
+
+.greetings-window {
+    position: absolute;
+    background-color: $white;
+    top: 47%;
+    transform: translateY(-50%);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.9;
+    text-align: center;
+    padding: 35px;
+    z-index: 50;
+
+    &_m-top {
+        margin-top: $header-mobile-height;
+    }
+    @media screen and (max-width: $xs-max) {
+        position: relative;
+        opacity: 1;
+        padding: 25px;
+        top: 0;
+        .question-text {
+            position: absolute;
+            top: 150%;
+            left: 0;
+            right: 0;
+        }
+    }
+    // @media screen and (min-width: $sm-min) and (max-width: $sm-max) {
+    //     top: 16%;
+    // }
+    // @media screen and (min-width: $sm-min) {
+    //     height: 294px;
+    // }
+    // @media screen and (min-width: $md-min) {
+    //     height: 320px;
+    // }
+    @media screen and (max-width: $md-max) {
+        transform: translateY(0);
+    }
+    h1 {
+        color: $blue;
+    }
+    .question-text {
+        font-size: 24px;
+        margin-top: $spacer;
+    }
+    .lng-button {
+        margin-top: 20px;
+    }
+}
+
+.preview-block {
+    position: relative;
+    max-height: 640px;
+    overflow: hidden;
+    margin-bottom: -$triangle-separator-sm-height;
+    @media screen and (max-width: $xs-max) {
+        margin-bottom: -$triangle-separator-xs-height;
+    }
+    @media screen and (max-width: $xs-max) {
+        margin-bottom: -$triangle-separator-xs-height;
+    }
+}
+
+.triangle-row-wrapper {
+    width: 50%;
+    background-color: transparent;
+    &.first {
+        padding-right: $triangle-separator-sm-width;
+    }
+    &.second {
+        padding-left: $triangle-separator-sm-width;
+    }
+    .triangle-row {
+        position: relative;
+        height: $triangle-separator-sm-height;
+        background-color: white;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-bottom: $triangle-separator-sm-height solid white;
+        }
+    }
+    &.first {
+        .triangle-row {
+            &:after {
+                right: -$triangle-separator-sm-width;
+                border-right: $triangle-separator-sm-width solid transparent;
+            }
+        }
+    }
+    &.second {
+        .triangle-row {
+            &:after {
+                left: -$triangle-separator-sm-width;
+                border-left: $triangle-separator-sm-width solid transparent;
+            }
+        }
+    }
+    @media screen and (max-width: $xs-max) {
+        &.first {
+            padding-right: $triangle-separator-xs-width;
+        }
+        &.second {
+            padding-left: $triangle-separator-xs-width;
+        }
+        .triangle-row {
+            height: $triangle-separator-xs-height;
+            &:after {
+                border-bottom-width: $triangle-separator-xs-height;
+            }
+        }
+        &.first {
+            .triangle-row {
+                &:after {
+                    right: -$triangle-separator-xs-width;
+                    border-right: $triangle-separator-xs-width solid transparent;
+                }
+            }
+        }
+        &.second {
+            .triangle-row {
+                &:after {
+                    left: -$triangle-separator-xs-width;
+                    border-left: $triangle-separator-xs-width solid transparent;
+                }
+            }
+        }
+    }
+}
+
+.button-wrapper {
+    padding: 0 20px;
+    margin: $spacer 0 35px;
+    button {
+        width: 100%;
+    }
+}

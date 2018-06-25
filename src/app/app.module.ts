@@ -8,6 +8,7 @@ import { PlanningToolsComponent } from './components/shared/planning-tools/plann
 import { SubmenuComponent } from './components/shared/header/submenu/submenu.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { SocialButtonsComponent } from './components/shared/social-buttons/social-buttons.component';
+import { PreviewBlockComponent } from './components/shared/preview-block/preview-block.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SocialButtonsComponent } from './components/shared/social-buttons/socia
     PlanningToolsComponent,
     SubmenuComponent,
     HomePageComponent,
-    SocialButtonsComponent
+    SocialButtonsComponent,
+    PreviewBlockComponent,
   ],
   imports: [
     BrowserModule

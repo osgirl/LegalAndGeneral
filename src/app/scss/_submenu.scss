@@ -1,63 +1,7 @@
 @import "variables";
 @import "mixins";
-$header-mobile-height: 55px;
-
-.navbar-collapsable {
-  @media screen and (max-width: $xs-max) {
-    background-color: $white;
-    padding: 0;
-    display: none;
-    margin-top: $header-mobile-height - 2px;
-    border-top: 2px solid $blue;
-    &.active {
-      display: block;
-      .additional-block {
-        display: block;
-      }
-    }
-    
-    .additional-block {
-      margin-top: 0;
-      border-top: 1px solid $gray_alt;
-    }
-  }
-
-  .additional-block {
-    display: none;
-    &__link {
-      display: block;
-      text-align: left;
-      font-size: 16px;
-      padding: 0 20px 10px;
-      color: $gray;
-      &:hover {
-        color: $blue;
-      }
-      &:first-of-type {
-        padding-top: 10px;
-      }
-    }
-  }
-
-  .header-menu {
-    margin-top: 30px;
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 0;
-    padding: 0;
-    @media screen and (min-width: $sm-min) {
-      display: flex;
-      justify-content: space-between;
-    }
-    @media screen and (min-width: $md-min) {
-      margin-top: 27px;
-    }
-    @media screen and (max-width: $xs-max) {
-      margin: 0;
-    }
-    
-  }
-}
+$header-color: $white;
+$border-color: $gray_alt;
 
 a,
 .navbar-nav>li>a,
@@ -80,7 +24,7 @@ a,
   .nav-link:not(.third-level),
   .nav-heading:not(.third-level) {
     margin-top: 0;
-    border-top: 1px solid $gray_alt;
+    border-top: 1px solid $border-color;
   }
   .nav-item:first-of-type {
       .nav-link {
@@ -130,7 +74,7 @@ a,
     border: 0;
     padding: 0;
     margin: 0;
-    background-color: $white;
+    background-color: $header-color;
     @media screen and (min-width: $sm-min) {
       position: absolute;
       left: 0;
@@ -162,8 +106,8 @@ a,
         display: flex;
         justify-content: center;
         &:nth-child(2) {
-          border-right: 2px solid $gray_alt;
-          border-left: 2px solid $gray_alt;
+          border-right: 2px solid $border-color;
+          border-left: 2px solid $border-color;
         }
       }
       @media screen and (max-width: $xs-max) {
@@ -231,6 +175,46 @@ a,
       display: none;
     }
   }
+  .submenu-triangle {
+    position: absolute;
+    width: 39px;
+    height: 18px;
+    margin: auto;
+    top: 0;
+    bottom: -34px;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    @include box-shadow(0,
+    16px,
+    10px,
+    -17px,
+    rgba(0,
+    0,
+    0,
+    0.5));
+    &:after {
+        content: "";
+        position: absolute;
+        width: 27px;
+        height: 27px;
+        background: $header-color;
+        transform: rotate(45deg);
+        top: 6px;
+        left: 6px;
+        @include box-shadow(-2px,
+        -2px,
+        10px,
+        -2px,
+        rgba(0,
+        0,
+        0,
+        0.5));
+    }
+}
   
   @media screen and (min-width: $sm-min) {
     &:hover {
