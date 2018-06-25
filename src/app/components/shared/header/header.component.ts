@@ -1,4 +1,4 @@
-declare var require: any;
+declare let require: any;
 import { Component, OnInit } from '@angular/core';
 import { FirstLevelItem } from './first-level-item';
 import { FirstLevelItems } from './first-level-items-list';

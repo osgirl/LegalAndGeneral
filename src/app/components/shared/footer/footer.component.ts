@@ -1,4 +1,4 @@
-declare var require: any;
+declare let require: any;
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   logoImagePath = require('./images/logo_mini.png');
+  
   constructor() { }
 
   ngOnInit() {
+  }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
   }
 
 }

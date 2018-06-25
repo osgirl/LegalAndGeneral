@@ -9,6 +9,8 @@ import { SubmenuComponent } from './components/shared/header/submenu/submenu.com
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { SocialButtonsComponent } from './components/shared/social-buttons/social-buttons.component';
 import { PreviewBlockComponent } from './components/shared/preview-block/preview-block.component';
+import { StepsBlockComponent } from './components/shared/steps-block/steps-block.component';
+import { InfoBlockComponent } from './components/shared/info-block/info-block.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { PreviewBlockComponent } from './components/shared/preview-block/preview
     HomePageComponent,
     SocialButtonsComponent,
     PreviewBlockComponent,
+    StepsBlockComponent,
+    InfoBlockComponent,
   ],
   imports: [
     BrowserModule

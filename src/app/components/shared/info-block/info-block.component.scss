@@ -1,0 +1,112 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.info {
+    background-color: $green;
+    text-align: center;
+    &__first-part {
+        padding: 30px 20px 40px;
+    }
+    &__second-part {
+        padding: 40px 20px;
+    }
+    &__heading {
+        padding-top: 20px;
+    }
+    a,
+    p,
+    h3 {
+        color: $white;
+    }
+    &__text {
+        padding-top: 5px;
+        font-size: 30px;
+        line-height: 1;
+    }
+    &__image {
+        width: 50px;
+        height: 50px;
+        margin: auto;
+    }
+    &__separator {
+        width: 100%;
+        height: 3px;
+        background-color: $white;
+    }
+    &__contacts-link {
+        display: inline-block;
+        line-height: 1;
+        margin-top: 50px;
+        font-size: 25px;
+    }
+    &__contacts-text {
+        padding-bottom: 20px;
+    }
+    &__email-link,
+    &__phone-link {
+        display: inline-block;
+        font-weight: bold;
+        position: relative;
+        letter-spacing: 0.03em;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+    &__email-link {
+        padding-left: 40px;
+        &:before {
+            content: '';
+            top: 3px;
+            width: 27px;
+            height: 16px;
+            background: url('images/mail.png') no-repeat;
+            @include background-size(cover);
+        }
+    }
+    &__phone-link {
+        padding-left: 33px;
+        &:before {
+            content: '';
+            top: -3px;
+            width: 23px;
+            height: 24px;
+            background: url('images/phone.png') no-repeat;
+            @include background-size(cover);
+        }
+    }
+    @media screen and (min-width: $sm-min) {
+        &__email-link {
+            padding-right: 60px;
+        }
+    }
+    @media screen and (max-width: $sm-max) {
+        &__contacts-link {
+            margin-top: 25px;
+        }
+    }
+    @media screen and (max-width: $xs-max) {
+        &__first-part {
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+        &__second-part {
+            padding-top: 14px;
+            padding-bottom: 14px;
+        }
+        &__text {
+            padding-top: $spacer;
+            font-size: 18px;
+            line-height: 1.1;
+        }
+        &__contacts-text {
+            padding-bottom: 12px;
+        }
+        &__email-link {
+            padding-bottom: 16px;
+            word-break: break-all;
+        }
+    }
+}

@@ -89,11 +89,10 @@ a,
       0.5));
     }
     .nav-link {
+      color: $black;
+      
       &:not(.sub-menu-collapsable) {
         display: block;
-      }
-      &:not(.info-block__heading) {
-        color: $black;
       }
       &:hover {
         color: $yellow;
