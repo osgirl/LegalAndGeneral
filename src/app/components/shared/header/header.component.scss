@@ -23,7 +23,7 @@ header {
     .lng-logo {
         width: 95px;
         height: 70px;
-        margin-top: $spacer;
+        margin: $spacer;
         @media screen and (max-width: $xs-max) {
             width: 56px;
             height: 42px;
