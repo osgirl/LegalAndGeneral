@@ -2,8 +2,6 @@
 @import "../../../scss/mixins";
 $header-height: 100px;
 $header-mobile-height: 58px;
-$header-color: $white;
-$border-color: $gray_alt;
 
 header {
     @include clearfix();

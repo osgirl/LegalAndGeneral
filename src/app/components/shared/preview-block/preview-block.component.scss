@@ -1,16 +1,16 @@
 @import "../../../scss/variables";
-
 $header-mobile-height: 55px;
 $triangle-separator-sm-width: 60px;
 $triangle-separator-sm-height: 30px;
 $triangle-separator-xs-width: 16px;
 $triangle-separator-xs-height: 7px;
-
 .greetings-window {
     position: absolute;
+    width: 70%;
+    height: auto;
     background-color: $white;
-    top: 47%;
-    transform: translateY(-50%);
+    transform: translateY(-63%);
+    margin: 0 auto;
     bottom: 0;
     left: 0;
     right: 0;
@@ -18,9 +18,9 @@ $triangle-separator-xs-height: 7px;
     text-align: center;
     padding: 35px;
     z-index: 50;
-
-    &_m-top {
-        margin-top: $header-mobile-height;
+    .question-text {
+        font-size: 24px;
+        margin-top: $spacer;
     }
     @media screen and (max-width: $xs-max) {
         position: relative;
@@ -28,30 +28,26 @@ $triangle-separator-xs-height: 7px;
         padding: 25px;
         top: 0;
         .question-text {
+            margin: 0;
+            font-style: italic;
             position: absolute;
-            top: 150%;
+            top: 125%;
             left: 0;
             right: 0;
         }
     }
-    // @media screen and (min-width: $sm-min) and (max-width: $sm-max) {
-    //     top: 16%;
-    // }
-    // @media screen and (min-width: $sm-min) {
-    //     height: 294px;
-    // }
-    // @media screen and (min-width: $md-min) {
-    //     height: 320px;
-    // }
-    @media screen and (max-width: $md-max) {
+    @media screen and (min-width: $sm-min) and (max-width: $sm-max) {
+        width: 80%;
+        transform: translateY(-40%);
+    }
+    @media screen and (min-width: $md-min) {
+        width: 80%;
+    }
+    @media screen and (max-width: $xs-max) {
         transform: translateY(0);
     }
-    h1 {
+    &__heading {
         color: $blue;
-    }
-    .question-text {
-        font-size: 24px;
-        margin-top: $spacer;
     }
     .lng-button {
         margin-top: 20px;

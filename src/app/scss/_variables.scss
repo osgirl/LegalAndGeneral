@@ -5,7 +5,7 @@ $md-min: 992px;
 $md-max: 1199px;
 $lg-min: 1200px;
 $spacer: 15px;
-$button-height: 50px;
+$button-height: 45px;
 
 $blue: #0099cc; // 1
 $blue-light: #009fe3;
@@ -18,4 +18,7 @@ $gray-lighter: #e0e0e0; // gray-lighter // 7
 $gray_alt: #c0c0c0; //$gray_alt   // 8
 $gray-dark: #333333; 
 
-$gray-light: #e6e6e6; //$gray-light 
+$gray-light: #e6e6e6; //$gray-light
+
+$header-color: $white;
+$border-color: $gray_alt;
