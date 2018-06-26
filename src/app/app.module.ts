@@ -16,6 +16,7 @@ import { InfoBlockComponent } from './components/shared/info-block/info-block.co
 import { BlogpostComponent } from './components/blogpost/blogpost.component';
 import { PlanningToolsComponent } from './components/planning-tools/planning-tools.component';
 import { PaginationComponent } from './components/shared/pagination/pagination.component';
+import { ImageCarouselComponent } from './components/shared/image-carousel/image-carousel.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PaginationComponent } from './components/shared/pagination/pagination.c
     InfoBlockComponent,
     BlogpostComponent,
     PlanningToolsComponent,
-    PaginationComponent
+    PaginationComponent,
+    ImageCarouselComponent
   ],
   imports: [
     BrowserModule,
