@@ -1,0 +1,121 @@
+@import "../../scss/variables";
+$main-content-horizontal-paddings: 100px;
+.content-top {
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+  &_max-height {
+    max-height: 465px;
+  }
+  &__step-image {
+    position: absolute;
+    left: 30px;
+    top: 25px;
+    width: 50px;
+    height: 64px;
+    @media screen and (max-width: $xs-max) {
+      width: 35px;
+      height: 45px;
+      top: 15px;
+      left: 25px;
+    }
+  }
+  &__heading {
+    font-weight: bold;
+    position: relative;
+    color: $blue;
+    @media screen and (max-width: $xs-max) {
+      font-size: 25px;
+    }
+  }
+  &__image {
+    @media screen and (min-width: $sm-min) {
+      transform: translateY(-7%);
+    }
+    @media screen and (min-width: $md-min) {
+      transform: translateY(-12%);
+    }
+  }
+  &__step-window {
+    position: absolute;
+    padding: 30px $main-content-horizontal-paddings;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $white;
+    opacity: 0.9;
+    z-index: 9;
+    @media screen and (max-width: $xs-max) {
+      padding: 20px;
+      text-align: center;
+      &_static-xs {
+        position: static;
+        width: 100%;
+        padding: 10px 0;
+        background-color: $white;
+        bottom: auto;
+      }
+    }
+  }
+  &__greetings-text {
+    font-size: 24px;
+    margin-top: $spacer;
+    line-height: 1.1;
+    font-weight: bold;
+    &_sm-padding-right {
+      @media screen and (min-width: $sm-min) {
+        padding-right: 100px;
+      }
+    }
+    @media screen and (max-width: $xs-max) {
+      margin-top: 0;
+      font-size: 20px;
+    }
+  }
+  .lng-button {
+    position: absolute;
+    right: 0;
+    bottom: 30%;
+
+    @media screen and (max-width: $xs-max) {
+      @media screen {
+        width: auto;
+        height: auto;
+        position: static;
+        background: none;
+        color: $yellow;
+        padding: 0;
+        display: inline-block;
+        position: static;
+        line-height: 1;
+        &:hover {
+          color: darken($yellow, 12%);
+        }
+      }
+    }
+  }
+}
+
+.content-center {
+  padding: 45px $main-content-horizontal-paddings;
+  @media screen and (max-width: $xs-max) {
+    padding: 25px;
+  }
+  &__heading {
+    color: $blue;
+  }
+}
+
+.content-bottom {
+  &__top-text {
+    color: $blue;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 25px;
+    padding-right: 25px;
+    @media screen and (max-width: $xs-max) {
+      text-align: center;
+      padding-top: 25px;
+    }
+  }
+}
