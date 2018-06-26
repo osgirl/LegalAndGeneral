@@ -6,12 +6,13 @@
     </p>
   </div>
   <div class="pull-left hidden-xs steps-photo">
-    <img class="steps-photo__first" src="images/photo_6.jpg" alt="steps-photo">
+    <img class="steps-photo__first" [src]="stepPhotoHeaderPath" alt="steps-photo">
     <div class="steps-photo__message">As a valued member of the pensions scheme, we want to make sure you can access all the information you need.</div>
-    <img class="steps-photo__second first-step-item" src="images/photo_8.jpg" alt="steps-photo">
-    <img class="steps-photo__second second-step-item" src="images/photo_5.jpg" alt="steps-photo">
-    <img class="steps-photo__second third-step-item" src="images/photo_9.jpg" alt="steps-photo">
-    <img class="steps-photo__second fourth-step-item" src="images/photo_10.jpg" alt="steps-photo">
+    
+    <img *ngFor='let path of photoPathList; let i = index'
+        class="steps-photo__second"
+        [src]="path" alt="steps-photo"
+        [class.active]="activeStep == i && selectedItem != null">
   </div>
 
   <div class="step-items">
@@ -19,7 +20,7 @@
     <div *ngFor="let step of stepList; let i = index"
     class="step-item"
     [class.active]="step == selectedItem"
-    (click)="onSelect(step)">
+    (click)="onSelect(step, i)">
       <div class="step-item__header">
         <p class="step-item__heading">Step {{ i + 1 }}</p>
         <p class="step-item__about-text">{{step.heading}}
