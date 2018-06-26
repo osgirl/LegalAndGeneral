@@ -7,6 +7,7 @@ $steps-header-button-height: 37px;
 $steps-photo-height: 472px;
 $steps-photo-message-height: 214px;
 $steps-photo-message-width: 390px;
+
 .steps {
     padding: 0 20px;
     @media screen and (min-width: $sm-min) {
@@ -27,14 +28,13 @@ $steps-photo-message-width: 390px;
         left: 50%;
         border-left: 10px solid $blue;
         @media screen and (max-width: $xs-max) {
-            width: 100%;
-            height: 153px;
-            margin-left: 0;
+            left: 0;
         }
     }
     .steps-header {
         @media screen and (max-width: $xs-max) {
-            left: -5px;
+            width: 100%;
+            height: auto;
         }
         &__board {
             width: $steps-header-button-width;
@@ -51,7 +51,7 @@ $steps-photo-message-width: 390px;
             }
         }
         &__text {
-            padding: 16px 14px 0;
+            padding: $spacer;
             font-size: 18px;
             font-weight: bold;
             line-height: 1.2;
@@ -115,7 +115,7 @@ $steps-photo-message-width: 390px;
                 .step-item__header {
                     margin-bottom: 0;
                     @media screen and (max-width: $xs-max) {
-                        margin-bottom: 30px;
+                        margin-bottom: 0;
                     }
                 }
             }
@@ -165,26 +165,34 @@ $steps-photo-message-width: 390px;
                 bottom: 0;
                 margin: auto;
                 left: 30px;
-                &.step-1-image {
+            }
+            &:nth-of-type(1) {
+                .step-item__header-image {
                     width: 48px;
                     height: 51px;
                     background: url('images/step_1.png') no-repeat;
                     @include background-size(cover);
                 }
-                &.step-2-image {
+            }
+            &:nth-of-type(2) {
+                .step-item__header-image {
                     width: 50px;
                     height: 63px;
                     background: url('images/step_2.png') no-repeat;
                     @include background-size(cover);
                 }
-                &.step-3-image {
+            }
+            &:nth-of-type(3) {
+                .step-item__header-image {
                     left: 22px;
                     width: 62px;
                     height: 72px;
                     background: url('images/step_3.png') no-repeat;
                     @include background-size(cover);
                 }
-                &.step-4-image {
+            }
+            &:nth-of-type(4) {
+                .step-item__header-image {
                     left: 18px;
                     width: 72px;
                     height: 72px;
@@ -192,6 +200,7 @@ $steps-photo-message-width: 390px;
                     @include background-size(cover);
                 }
             }
+
             &__triangle-helper {
                 &:before,
                 &:after {
@@ -223,7 +232,11 @@ $steps-photo-message-width: 390px;
                 line-height: 1;
             }
             &__heading,
-            &__main-text {
+            &__title {
+                font-weight: bold;
+            }
+            &__title {
+                margin-bottom: 10px;
                 font-weight: bold;
             }
             &__about-text {
@@ -246,15 +259,15 @@ $steps-photo-message-width: 390px;
                 padding: 0;
                 transition: all 0.3s ease-out;
                 .lng-button {
-                    margin-bottom: 18px;
+                    margin-top: 18px;
                 }
             }
             &.active {
                 .step-item__content {
-                    padding: 25px 55px 65px 100px;
+                    padding: 25px 40px 50px 70px;
                     height: auto;
                     @media screen and (max-width: $sm-max) {
-                        padding: $spacer 0 18px $spacer;
+                        padding: $spacer $spacer * 2;
                     }
                 }
                 .lng-chevron {
@@ -288,22 +301,33 @@ $steps-photo-message-width: 390px;
                 .step-item__about-text {
                     color: $white;
                 }
-                .step-1-image {
-                    background: url('images/step_1_alt.png') no-repeat;
-                    @include background-size(cover);
+                &:nth-of-type(1) {
+                    .step-item__header-image {
+                        background: url('images/step_1_alt.png') no-repeat;
+                        @include background-size(cover);
+                    }
                 }
-                .step-2-image {
-                    background: url('images/step_2_alt.png') no-repeat;
-                    @include background-size(cover);
+                &:nth-of-type(2) {
+                    .step-item__header-image {
+                        background: url('images/step_2_alt.png') no-repeat;
+                        @include background-size(cover);
+                    }
                 }
-                .step-3-image {
-                    background: url('images/step_3_alt.png') no-repeat;
-                    @include background-size(cover);
+                &:nth-of-type(3) {
+                    .step-item__header-image {
+                        background: url('images/step_3_alt.png') no-repeat;
+                        @include background-size(cover);
+                    }
                 }
-                .step-4-image {
-                    background: url('images/step_4_alt.png') no-repeat;
-                    @include background-size(cover);
-                }
+                &:nth-of-type(4) {
+                    .step-item__header-image {
+                        background: url('images/step_4_alt.png') no-repeat;
+                        @include background-size(cover);
+                    }
+                }  
+            }
+            .planning-tools {
+                margin-top: $spacer;
             }
         }
     }
