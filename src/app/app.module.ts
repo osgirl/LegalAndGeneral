@@ -15,6 +15,7 @@ import { StepsBlockComponent } from './components/shared/steps-block/steps-block
 import { InfoBlockComponent } from './components/shared/info-block/info-block.component';
 import { BlogpostComponent } from './components/blogpost/blogpost.component';
 import { PlanningToolsComponent } from './components/planning-tools/planning-tools.component';
+import { PaginationComponent } from './components/shared/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PlanningToolsComponent } from './components/planning-tools/planning-too
     StepsBlockComponent,
     InfoBlockComponent,
     BlogpostComponent,
-    PlanningToolsComponent
+    PlanningToolsComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
