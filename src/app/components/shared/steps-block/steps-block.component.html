@@ -30,19 +30,19 @@
         <div class="step-item__header-image"></div>
       </div>
       <div class="step-item__content">
-        <p class="step-item__title">
+        <p class="step-item__title mb-1">
             {{step.title}}
         </p>
         <p *ngIf="step.text" class="step-item__main-text">
             {{step.text}}
         </p>
-        <ul *ngIf="step.list" class="step-item__list blue-dots-list">
+        <ul *ngIf="step.list" class="step-item__list blue-dots-list mb-1">
           <li *ngFor="let text of step.list">
             <span>{{ text }}</span>
           </li>
         </ul>
 
-        <button class="lng-button">Learn more</button>
+        <button [class.mb-1]="step.hasPlanningTools" class="lng-button mt-1">Learn more</button>
 
         <app-planning-tools *ngIf="step.hasPlanningTools"></app-planning-tools>
       </div>

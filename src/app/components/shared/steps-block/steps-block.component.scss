@@ -236,7 +236,6 @@ $steps-photo-message-width: 390px;
                 font-weight: bold;
             }
             &__title {
-                margin-bottom: 10px;
                 font-weight: bold;
             }
             &__about-text {
@@ -258,9 +257,6 @@ $steps-photo-message-width: 390px;
                 overflow: hidden;
                 padding: 0;
                 transition: all 0.3s ease-out;
-                .lng-button {
-                    margin-top: 18px;
-                }
             }
             &.active {
                 .step-item__content {
@@ -325,9 +321,6 @@ $steps-photo-message-width: 390px;
                         @include background-size(cover);
                     }
                 }  
-            }
-            .planning-tools {
-                margin-top: $spacer;
             }
         }
     }
