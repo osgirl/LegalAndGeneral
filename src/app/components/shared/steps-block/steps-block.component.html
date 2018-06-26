@@ -10,26 +10,31 @@
     <div class="steps-photo__message">As a valued member of the pensions scheme, we want to make sure you can access all the information you need.</div>
     
     <img *ngFor='let path of photoPathList; let i = index'
-        class="steps-photo__second"
-        [src]="path" alt="steps-photo"
-        [class.active]="activeStep == i && selectedItem != null">
+      class="steps-photo__second"
+      [src]="path" alt="steps-photo"
+      [class.active]="activeStep == i && selectedItem != null">
+
   </div>
 
   <div class="step-items">
     
     <div *ngFor="let step of stepList; let i = index"
-    class="step-item"
-    [class.active]="step == selectedItem"
-    (click)="onSelect(step, i)">
+      class="step-item"
+      [class.active]="step == selectedItem"
+      (click)="onSelect(step, i)">
+
       <div class="step-item__header">
         <p class="step-item__heading">Step {{ i + 1 }}</p>
         <p class="step-item__about-text">{{step.heading}}
+
           <span class="lng-chevron"> »</span>
-          <span (click)="closeItem($event)" class="step-item__close-button"></span>
+          <span (click)="closeItem($event)"
+            class="step-item__close-button"></span>
         </p>
         <div class="step-item__triangle-helper"></div>
         <div class="step-item__header-image"></div>
       </div>
+      
       <div class="step-item__content">
         <p class="step-item__title mb-1">
             {{step.title}}
