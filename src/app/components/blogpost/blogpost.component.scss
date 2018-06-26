@@ -1,14 +1,15 @@
 @import "../../scss/variables";
 @import "../../scss/mixins";
-.content-left {
+.blogpost {
     float: left;
     width: 75%;
     padding-top: $spacer;
     @include clearfix();
-    &__heading {
-        font-size: 30px;
+    &__heading-article {
+        margin: 20px 0;
         font-weight: bold;
         color: $blue;
+        text-align: center;
     }
     &__text {
         margin-top: 25px;
@@ -63,26 +64,40 @@
             }
         }
     }
+    $default-img-size: 250px;
+    $md-size: 200px;
     &__image {
+        display: block;
+        width: $default-img-size;
+        height: $default-img-size;
         margin-bottom: 25px;
+        margin-left: auto;
+        margin-right: auto;
         &_rounded {
             border-radius: 50%;
         }
-    }
-    &__article-info {
-        padding-right: 5px;
-        border-right: 1px solid $blue;
-        font-size: 14px;
-        color: $blue;
-        &:last-of-type {
-            padding-right: 0;
-            border-right: 0;
+        @media screen and (max-width: $md-max) {
+            width: $md-size;
+            height: $md-size;
+        }
+        @media screen and (max-width: $sm-max) {
+            width: $default-img-size;
+            height: $default-img-size;
         }
     }
-    &__heading-article {
-        margin: 20px 0;
-        font-weight: bold;
+    &__article-info-wrapper {
+        text-align: center;
+    }
+    &__article-info {
+        font-size: 14px;
         color: $blue;
+        &:first-of-type {
+            padding-right: 5px;
+            border-right: 1px solid $blue;
+        }
+        &:last-of-type {
+            padding-left: 5px;
+        }
     }
 }
 
@@ -123,7 +138,7 @@
 }
 
 @media screen and (max-width: $sm-max) {
-    .content-left,
+    .blogpost,
     .sidebar {
         float: none;
         width: 100%;

@@ -1,90 +1,27 @@
 <main>
   <div class="container">
-    <div class="blogpost">
-      <div class="blogpost__item">
-        <img src="dist/img/photo_16_mini.jpg" alt="blogpost" class="blogpost__image blogpost__image_rounded">
+    <div  class="blogpost">
 
-        <span class="blogpost__article-info">by Nick</span>
-        <span class="blogpost__article-info">May 9, 2014</span>
-        <span class="blogpost__article-info">Loreum</span>
+      <div *ngFor="let item of blogpostItems" class="blogpost__item">
+        <img [src]="makeImagePath(item.image)" alt="blogpost" class="blogpost__image blogpost__image_rounded">
+         <div [ngStyle]="{'background': 'url(' + item.image + ') no-repeat','background-size': 'cover'}"></div>
+          
+         <div class="blogpost__article-info-wrapper">
+            <span class="blogpost__article-info">{{ item.articleInfo.author }}</span>
+            <span class="blogpost__article-info">
+              {{ item.articleInfo.date.month }}
+              {{ item.articleInfo.date.day }},
+              {{ item.articleInfo.date.year }}
+            </span>
+          </div>
 
-        <h4 class="blogpost__heading-article">Heading</h4>
+        <h4 class="blogpost__heading-article"> {{ item.title }} </h4>
         <p>
-          We'd like to share our experience and expertise with you. Speak to us if you would like to view a demonstration of our online
-          solutions, or if you have any specific client projects that you would like to discuss.
+          {{ item.text }}
         </p>
         <a href="#" class="lng-link hover-yellow not-underline-link d-iblock mt-1">read more »</a>
       </div>
-      <div class="blogpost__item">
-        <img src="dist/img/photo_17_mini.jpg" alt="blogpost" class="blogpost__image blogpost__image_rounded">
 
-        <span class="blogpost__article-info">by Nick</span>
-        <span class="blogpost__article-info">May 9, 2014</span>
-        <span class="blogpost__article-info">Loreum</span>
-
-        <h4 class="blogpost__heading-article">Heading</h4>
-        <p>
-          We'd like to share our experience and expertise with you. Speak to us if you would like to view a demonstration of our online
-          solutions, or if you have any specific client projects that you would like to discuss.
-        </p>
-        <a href="#" class="lng-link hover-yellow not-underline-link d-iblock mt-1">read more »</a>
-      </div>
-      <div class="blogpost__item">
-        <img src="dist/img/photo_18_mini.jpg" alt="blogpost" class="blogpost__image blogpost__image_rounded">
-
-        <span class="blogpost__article-info">by Nick</span>
-        <span class="blogpost__article-info">May 9, 2014</span>
-        <span class="blogpost__article-info">Loreum</span>
-
-        <h4 class="blogpost__heading-article">Heading</h4>
-        <p>
-          We'd like to share our experience and expertise with you. Speak to us if you would like to view a demonstration of our online
-          solutions, or if you have any specific client projects that you would like to discuss.
-        </p>
-        <a href="#" class="lng-link hover-yellow not-underline-link d-iblock mt-1">read more »</a>
-      </div>
-      <div class="blogpost__item">
-        <img src="dist/img/photo_13.jpg" alt="blogpost" class="blogpost__image blogpost__image_rounded">
-
-        <span class="blogpost__article-info">by Nick</span>
-        <span class="blogpost__article-info">May 9, 2014</span>
-        <span class="blogpost__article-info">Loreum</span>
-
-        <h4 class="blogpost__heading-article">Heading</h4>
-        <p>
-          We'd like to share our experience and expertise with you. Speak to us if you would like to view a demonstration of our online
-          solutions, or if you have any specific client projects that you would like to discuss.
-        </p>
-        <a href="#" class="lng-link hover-yellow not-underline-link d-iblock mt-1">read more »</a>
-      </div>
-      <div class="blogpost__item">
-        <img src="dist/img/photo_19_mini.jpg" alt="blogpost" class="blogpost__image blogpost__image_rounded">
-
-        <span class="blogpost__article-info">by Nick</span>
-        <span class="blogpost__article-info">May 9, 2014</span>
-        <span class="blogpost__article-info">Loreum</span>
-
-        <h4 class="blogpost__heading-article">Heading</h4>
-        <p>
-          We'd like to share our experience and expertise with you. Speak to us if you would like to view a demonstration of our online
-          solutions, or if you have any specific client projects that you would like to discuss.
-        </p>
-        <a href="#" class="lng-link hover-yellow not-underline-link d-iblock mt-1">read more »</a>
-      </div>
-      <div class="blogpost__item">
-        <img src="dist/img/photo_20_mini.jpg" alt="blogpost" class="blogpost__image blogpost__image_rounded">
-
-        <span class="blogpost__article-info">by Nick</span>
-        <span class="blogpost__article-info">May 9, 2014</span>
-        <span class="blogpost__article-info">Loreum</span>
-
-        <h4 class="blogpost__heading-article">Heading</h4>
-        <p>
-          We'd like to share our experience and expertise with you. Speak to us if you would like to view a demonstration of our online
-          solutions, or if you have any specific client projects that you would like to discuss.
-        </p>
-        <a href="#" class="lng-link hover-yellow not-underline-link d-iblock mt-1">read more »</a>
-      </div>
     </div>
     <section class="sidebar">
       <div class="sidebar__item">
@@ -113,14 +50,5 @@
       </div>
     </section>
   </div>
-  <div class="paging paging_margin-bottom">
-    <span class="paging__overview">Page
-      <span class="paging__current">1</span> of
-      <span class="paging__all">3</span>
-    </span>
-    <a href="#" class="paging__page">1</a>
-    <a href="#" class="paging__page">2</a>
-    <a href="#" class="paging__page">3</a>
-    <a href="#" class="paging__link">»</a>
-  </div>
+  <app-pagination></app-pagination>
 </main>
