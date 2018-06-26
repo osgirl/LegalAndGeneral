@@ -5,11 +5,13 @@ $footer-color: $gray-dark;
 footer {
   min-height: $footer-height;
   background-color: $footer-color;
+  
   .footer-top {
     position: relative;
     cursor: pointer;
     height: 50px;
     background-color: white;
+    border-top: 1px solid $gray_alt;
     &:before {
       content: '';
       position: absolute;
