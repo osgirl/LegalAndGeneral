@@ -1,0 +1,32 @@
+@import "../../../scss/variables";
+
+.pagination {
+    margin: 35px 0 15px;
+    text-align: center;
+    .yellow-box-chevron {
+        top: -3px;
+    }
+    &__overview,
+    &__page,
+    &__link {
+        color: $gray;
+    }
+    &__overview {
+        padding-right: $spacer;
+    }
+    &__page,
+    &__link {
+        padding: 0 5px;
+        font-weight: bold;
+        &:hover {
+            color: $blue;
+        }
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+        &:focus {
+            color: $gray;
+        }
+    }
+}
