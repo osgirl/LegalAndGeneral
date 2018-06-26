@@ -1,0 +1,135 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+.content-left {
+    float: left;
+    width: 75%;
+    padding-top: $spacer;
+    @include clearfix();
+    &__heading {
+        font-size: 30px;
+        font-weight: bold;
+        color: $blue;
+    }
+    &__text {
+        margin-top: 25px;
+    }
+    @media screen and (min-width: $md-min) {
+        border-right: 2px solid $gray_alt;
+        .tabs-module {
+            padding-right: $spacer * 2;
+        }
+        &.padding-right {
+            padding-right: $spacer;
+        }
+    }
+    &__item {
+        float: left;
+        width: 33.3%;
+        padding-right: 25px;
+        margin-bottom: 50px;
+        @media screen and (min-width: $sm-min) and (max-width: $sm-max) {
+            &:nth-of-type(odd) {
+                padding-right: 12.5px;
+                clear: left;
+            }
+            &:nth-of-type(even) {
+                padding-right: 0;
+                padding-left: 12.5px;
+            }
+            &:nth-last-child(1),
+            &:nth-last-child(2),
+                {
+                margin-bottom: 0;
+            }
+        }
+        @media screen and (max-width: $sm-max) {
+            width: 50%;
+        }
+        @media screen and (max-width: $xs-max) {
+            width: 100%;
+            padding-right: 0;
+            &:last-of-type {
+                margin-bottom: $spacer;
+            }
+        }
+        @media screen and (min-width: $md-min) {
+            &:nth-last-child(1),
+            &:nth-last-child(2),
+            &:nth-last-child(3) {
+                margin-bottom: 0;
+            }
+            &:nth-of-type(3n + 4) {
+                clear: left;
+            }
+        }
+    }
+    &__image {
+        margin-bottom: 25px;
+        &_rounded {
+            border-radius: 50%;
+        }
+    }
+    &__article-info {
+        padding-right: 5px;
+        border-right: 1px solid $blue;
+        font-size: 14px;
+        color: $blue;
+        &:last-of-type {
+            padding-right: 0;
+            border-right: 0;
+        }
+    }
+    &__heading-article {
+        margin: 20px 0;
+        font-weight: bold;
+        color: $blue;
+    }
+}
+
+.sidebar {
+    position: relative;
+    float: right;
+    width: 25%;
+    padding-left: $spacer;
+    &__item {
+        padding: $spacer;
+        background-color: $gray-lighter;
+        margin-bottom: 25px;
+        @media screen and (min-width: $sm-min) {
+            &:first-of-type {
+                margin-top: $spacer;
+            }
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    &__heading {
+        font-weight: bold;
+        color: $blue;
+    }
+    &__text {
+        font-weight: bold;
+    }
+    &__text,
+    a {
+        display: block;
+    }
+    @include clearfix();
+    @media screen and (min-width: $md-min) {
+        border-left: 2px solid $gray_alt;
+        left: -2px;
+    }
+}
+
+@media screen and (max-width: $sm-max) {
+    .content-left,
+    .sidebar {
+        float: none;
+        width: 100%;
+    }
+    .sidebar {
+        padding-left: 0;
+        margin-top: $spacer;
+    }
+}
