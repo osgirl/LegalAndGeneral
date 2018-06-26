@@ -11,6 +11,8 @@ import { SocialButtonsComponent } from './components/shared/social-buttons/socia
 import { PreviewBlockComponent } from './components/shared/preview-block/preview-block.component';
 import { StepsBlockComponent } from './components/shared/steps-block/steps-block.component';
 import { InfoBlockComponent } from './components/shared/info-block/info-block.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { BlogpostComponent } from './components/blogpost/blogpost.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,11 @@ import { InfoBlockComponent } from './components/shared/info-block/info-block.co
     PreviewBlockComponent,
     StepsBlockComponent,
     InfoBlockComponent,
+    BlogpostComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
