@@ -1,5 +1,6 @@
 export class FirstLevelItem {
     text: string;
+    routerLink: string;
     secondLevelItems?: Array<
         {
             column: Array<

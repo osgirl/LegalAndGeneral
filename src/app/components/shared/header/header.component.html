@@ -24,7 +24,8 @@
                                     [ngClass]="{'clickable-item first-level' : firstLevelItem.secondLevelItems, 'active' : firstLevelItem === selectedItem}"
                                     class="nav-item">
                           
-                                    <a class="nav-link header-menu__link" href="#"
+                                    <a class="nav-link header-menu__link"
+                                        [routerLink]="firstLevelItem.routerLink"
                                         (click)="onSelect(firstLevelItem)">
                                         {{firstLevelItem.text}}
                                         <span class="hidden-sm hidden-md hidden-lg lng-chevron">»</span>

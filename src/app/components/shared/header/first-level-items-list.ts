@@ -1,10 +1,10 @@
 import { FirstLevelItem } from './first-level-item';
 
 export const FirstLevelItems: FirstLevelItem[] = [
-    { text: 'Planning tools' },
+    { text: 'Planning tools', routerLink: 'planning-tools' },
     {
       text: 'Options',
-
+      routerLink: '#',
       secondLevelItems: [
         {
           column: [
@@ -49,7 +49,7 @@ export const FirstLevelItems: FirstLevelItem[] = [
 
     {
       text: 'Insurance',
-
+      routerLink: '#',
       secondLevelItems: [
         {
           column: [
@@ -80,5 +80,5 @@ export const FirstLevelItems: FirstLevelItem[] = [
         }
       ]
     },
-    { text: 'Arriving' },
+  { text: 'Blogpost', routerLink: 'blogpost' },
 ];
