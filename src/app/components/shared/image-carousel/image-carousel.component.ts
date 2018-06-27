@@ -1,39 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+declare let require: any;
+
+import { Component, AfterViewInit } from '@angular/core';
+import { CarouselItemList } from './carousel-item-list';
 
 @Component({
   selector: 'app-image-carousel',
   templateUrl: './image-carousel.component.html',
   styleUrls: ['./image-carousel.component.scss']
 })
-export class ImageCarouselComponent implements OnInit {
+export class ImageCarouselComponent implements AfterViewInit {
+  itemList = CarouselItemList;
 
-  container;
+  container: HTMLElement;
   itemsWrapper: HTMLElement;
   carouselItems: Array<HTMLElement>;
-  leftBtn: HTMLElement;
-  rightBtn: HTMLElement;
+  leftBtn: HTMLInputElement;
+  rightBtn: HTMLInputElement;
 
   itemWidth: number;
   visibleCount: number;
   currentStep: number;
 
-  // this.$leftBtn.on('click', function () {
-  //   this.Move('left');
-  //   this.ArrangeTheButtons();
-  // });
-
-  // this.$rightBtn.on('click', function () {
-  //   this.Move('right');
-  //   this.ArrangeTheButtons();
-  // });
-
-
   constructor() { }
 
-  ngOnInit() {
-    this.container = document.querySelector('.image-carousel') as HTMLElement;
+  ngAfterViewInit() {
+    this.container = document.querySelector('.image-carousel');
     this.itemsWrapper = document.querySelector('.image-carousel__inner-wrapper');
-    this.carouselItems =[].slice.apply(document.getElementsByClassName('image-carousel__item'));
+    this.carouselItems = [].slice.apply(document.getElementsByClassName('image-carousel__item'));
     this.leftBtn = document.querySelector('.image-carousel__left-button');
     this.rightBtn = document.querySelector('.image-carousel__right-button');
 
@@ -42,18 +35,20 @@ export class ImageCarouselComponent implements OnInit {
 
   Move(direction) {
 
+
     if (direction == 'left') {
       this.currentStep--;
-      // this.itemsWrapper.style.left += this.itemWidth;
-      console.log(this.itemsWrapper.style["left"] =`${
+
+      this.itemsWrapper.style["left"] = `${
         parseInt(this.itemsWrapper.style.left, 10) + this.itemWidth
-      }px`);
-      
+        }px`;
+
     } else if (direction == 'right') {
       this.currentStep++;
-      console.log(this.itemsWrapper.style["left"] = `${
+
+      this.itemsWrapper.style["left"] = `${
         parseInt(this.itemsWrapper.style.left, 10) - this.itemWidth
-        }px`);
+        }px`;
     }
   }
 
@@ -63,14 +58,11 @@ export class ImageCarouselComponent implements OnInit {
       this.carouselItems.reduce((sum, element) => {
         return sum + element.offsetWidth;
       }, 0)
-      
-    }px`;
+
+      }px`;
   }
 
   ArrangeTheButtons() {
-    console.log(this.currentStep);
-    console.log(this.carouselItems.length);
-
     this.leftBtn.classList.add('appeared');
     this.rightBtn.classList.add('appeared');
 
@@ -95,5 +87,7 @@ export class ImageCarouselComponent implements OnInit {
     this.ArrangeTheButtons();
   }
 
-
+  makeImagePath(imageName: string) {
+    return require('./images/' + imageName);
+  }
 }
