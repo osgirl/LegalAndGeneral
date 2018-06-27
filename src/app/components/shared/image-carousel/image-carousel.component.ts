@@ -1,6 +1,6 @@
 declare let require: any;
 
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, HostListener } from '@angular/core';
 import { CarouselItemList } from './carousel-item-list';
 
 @Component({
@@ -71,6 +71,7 @@ export class ImageCarouselComponent implements AfterViewInit {
       this.rightBtn.classList.remove('appeared');
   }
 
+  @HostListener('window:resize')
   OnResize() {
     this.AdjustWrapperWidth();
     this.itemWidth = this.carouselItems[0].offsetWidth;
