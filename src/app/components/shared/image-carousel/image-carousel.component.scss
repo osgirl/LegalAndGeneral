@@ -1,0 +1,143 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.image-carousel {
+    position: relative;
+    margin: 30px auto;
+    padding: 0;
+    &__outer-wrapper {
+        overflow: hidden;
+        min-height: 250px;
+    }
+    &__inner-wrapper {
+        position: relative;
+        left: 0;
+        transition: left 0.2s ease-in-out;
+    }
+    &__left-button,
+    &__right-button {
+        display: none;
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 34px;
+        height: 60px;
+        cursor: pointer;
+        &.appeared {
+            display: block;
+        }
+    }
+    &__left-button {
+        left: 0;
+        background: url('images/arrow_left_blue.png') no-repeat;
+        @include background-size(cover);
+    }
+    &__right-button {
+        right: -25px;
+        background: url('images/arrow_right_blue.png') no-repeat;
+        @include background-size(cover);
+    }
+    &__item {
+        max-width: 292px;
+        padding: 0 50px;
+        float: left;
+        text-align: center;
+    }
+    &__image {
+        width: 192px;
+        height: 192px;
+        border-radius: 50%;
+    }
+    &__link-main {
+        display: block;
+        margin-top: 10px;
+        font-size: 20px;
+        line-height: 1;
+        color: $black;
+        &:hover,
+        &:focus {
+            color: $yellow;
+            text-decoration: none;
+        }
+    }
+    &__link {
+        display: block;
+        font-size: 14px;
+        text-align: left;
+        &,
+        &:hover,
+        &:focus {
+            color: $black;
+        }
+    }
+    &__link-description {
+        margin-top: 20px;
+        margin-bottom: $spacer;
+        font-size: 14px;
+        line-height: 1;
+        text-align: justify;
+    }
+    .vertical-line {
+        display: none;
+        position: absolute;
+        width: 5px;
+        background-color: $blue;
+        top: 0;
+        left: 58px;
+        height: 100%;
+    }
+    @media screen and (min-width: $md-min) and (max-width: $md-max) {
+        &__item {
+            max-width: 322px;
+            padding: 0 65px;
+        }
+    }
+    @media screen and (max-width: $sm-max) {
+        margin-bottom: 0;
+        .vertical-line {
+            display: block;
+        }
+        &__outer-wrapper {
+            padding: 0 20px;
+        }
+        &__inner-wrapper {
+            width: 100% !important;
+        }
+        &__item {
+            max-width: 100%;
+            padding: 0;
+            float: none;
+            text-align: left;
+            margin-bottom: 50px;
+            @include clearfix();
+        }
+        &__left-button,
+        &__right-button {
+            display: none !important;
+        }
+        &__image {
+            width: 80px;
+            height: 80px;
+            float: left;
+        }
+        &__link-main,
+        &__link,
+        &__link-description {
+            width: 80%;
+            float: right;
+            padding-left: 25px;
+        }
+        &__link-description {
+            margin-top: 5px;
+        }
+    }
+    @media screen and (max-width: $xs-max) {
+        &__link-main,
+        &__link,
+        &__link-description {
+            width: 75%;
+        }
+    }
+}
