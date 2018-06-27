@@ -30,6 +30,17 @@ header {
             margin: 7px 20px;
         }
     }
+    a,
+    .navbar-nav>li>a,
+    .nav>li>a,
+    .nav-link {
+        position: relative;
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            text-decoration: none;
+        }
+    }
     div[class^="col"] {
         position: inherit;
     }

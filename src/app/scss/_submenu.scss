@@ -1,18 +1,6 @@
 @import "variables";
 @import "mixins";
 
-a,
-.navbar-nav>li>a,
-.nav>li>a,
-.nav-link {
-  position: relative;
-  &:hover,
-  &:focus {
-    background-color: transparent;
-    text-decoration: none;
-  }
-}
-
 @media screen and (max-width: $xs-max) {
   .nav-link,
   .nav-heading {
