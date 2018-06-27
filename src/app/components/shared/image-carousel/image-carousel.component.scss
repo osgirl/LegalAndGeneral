@@ -1,6 +1,5 @@
 @import "../../../scss/variables";
 @import "../../../scss/mixins";
-
 .image-carousel {
     position: relative;
     margin: 30px auto;
@@ -36,8 +35,12 @@
     }
     &__right-button {
         right: -25px;
+        right: 5px;
         background: url('images/arrow_right_blue.png') no-repeat;
         @include background-size(cover);
+        @media screen and (min-width: $lg-min) {
+            right: -10px;
+        }
     }
     &__item {
         max-width: 292px;
@@ -50,7 +53,7 @@
         height: 192px;
         border-radius: 50%;
     }
-    &__link-main {
+    &__title-link {
         display: block;
         margin-top: 10px;
         font-size: 20px;
@@ -122,7 +125,7 @@
             height: 80px;
             float: left;
         }
-        &__link-main,
+        &__title-link,
         &__link,
         &__link-description {
             width: 80%;
@@ -134,10 +137,10 @@
         }
     }
     @media screen and (max-width: $xs-max) {
-        &__link-main,
+        &__title-link,
         &__link,
         &__link-description {
-            width: 75%;
+            width: 70%;
         }
     }
 }
