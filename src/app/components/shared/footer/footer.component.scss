@@ -118,6 +118,7 @@ footer {
         border-right: 1px solid $white;
         &:last-of-type {
           border: 0;
+          padding-right: 0;
         }
       }
     }
