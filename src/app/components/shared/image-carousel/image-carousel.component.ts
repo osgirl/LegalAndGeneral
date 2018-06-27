@@ -34,8 +34,6 @@ export class ImageCarouselComponent implements AfterViewInit {
   }
 
   Move(direction) {
-
-
     if (direction == 'left') {
       this.currentStep--;
 
@@ -59,7 +57,7 @@ export class ImageCarouselComponent implements AfterViewInit {
         return sum + element.offsetWidth;
       }, 0)
 
-      }px`;
+    }px`;
   }
 
   ArrangeTheButtons() {
