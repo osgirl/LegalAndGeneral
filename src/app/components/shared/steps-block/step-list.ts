@@ -2,6 +2,11 @@ import { StepItem } from './step-item';
 
 export const StepList: StepItem[] = [
     { heading: "First step",
+      title: "While you’re making memories, we’ve got you covered for your future.",
+      text: "Busy saving for your future? Here's what you need to know to ge the most out of your pension scheme. Remember to check back for new updates and tools. Keep up-to-date with your pension here.",  
+    },
+    {
+      heading: "On your way",
       title: "Use our planning tool to see how much you could save towards your future by cutting one cup of coffee per week.",
       list: [
         "Managing your pension pot",
@@ -10,10 +15,6 @@ export const StepList: StepItem[] = [
         "Nominating a beneficiary",
       ],
       hasPlanningTools: true,
-    },
-    { heading: "On your way",
-      title: "While you’re making memories, we’ve got you covered for your future.",
-      text: "Busy saving for your future? Here's what you need to know to ge the most out of your pension scheme. Remember to check back for new updates and tools. Keep up-to-date with your pension here.",  
     },
     { heading: "Getting there",
       title: "You should try and keep an eye on your pension pot as you get on with other things too",
