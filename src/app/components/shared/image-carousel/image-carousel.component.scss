@@ -29,7 +29,7 @@
         }
     }
     &__left-button {
-        left: 0;
+        left: 10px;
         background: url('images/arrow_left_blue.png') no-repeat;
         @include background-size(cover);
     }
