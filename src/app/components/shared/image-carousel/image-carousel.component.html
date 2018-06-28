@@ -9,6 +9,6 @@
             </div>
         </div>
     </div>
-    <button (click)="onClick('left')" class="image-carousel__left-button"></button>
-    <button (click)="onClick('right')" class="image-carousel__right-button appeared"></button>
+    <button (click)="onClick('left')" class="image-carousel__left-button" [disabled]="!areButtonsEnabled()"></button>
+    <button (click)="onClick('right')" class="image-carousel__right-button appeared" [disabled]="!areButtonsEnabled()"></button>
 </div>

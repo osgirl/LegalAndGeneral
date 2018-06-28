@@ -20,6 +20,7 @@ export class ImageCarouselComponent implements AfterViewInit {
   itemWidth: number;
   visibleCount: number;
   currentStep: number;
+  areBtnsEnabled: boolean;
 
   constructor() { }
 
@@ -61,6 +62,9 @@ export class ImageCarouselComponent implements AfterViewInit {
   }
 
   ArrangeTheButtons() {
+    this.areBtnsEnabled = false;
+    setTimeout(() => this.areBtnsEnabled = true, 300);
+
     this.leftBtn.classList.add('appeared');
     this.rightBtn.classList.add('appeared');
 
@@ -87,5 +91,9 @@ export class ImageCarouselComponent implements AfterViewInit {
 
   makeImagePath(imageName: string) {
     return require('./images/' + imageName);
+  }
+
+  areButtonsEnabled() {
+    return this.areBtnsEnabled;
   }
 }
